@@ -30,7 +30,7 @@ The chatbot features a responsive **multi-agent state machine** containing **7 s
 ## ⚡ Key Features
 
 * **Real-Time Google Sheets Sync**: All patient bookings, nurse intakes, invoice records, and conversation logs are synchronized to a Google Spreadsheet Web App in real-time.
-* **Offline-First Persistence**: Leverages an IndexedDB local cache queue. If the internet connection drops, actions are stored locally and automatically pushed once connectivity is restored.
+* **Offline-First Persistence**: Leverages a `localStorage` sync queue. If the internet connection drops, actions are stored locally and automatically pushed once connectivity is restored.
 * **Dual Chat Modes (Text & Audio)**: Switch between standard text chat and voice chat (unmuting SpeechSynthesis and activating Web Speech API Speech Recognition with dynamic waveforms).
 * **Rich Glassmorphic Design**: Sleek dark and light mode UI featuring fluid CSS animations, dynamic grids, interactive duty charts, and clean, premium typography.
 * **Zero Hardcoding Drug Guide**: Uses dynamic text extraction to identify pharmaceutical compounds and search the openFDA database on-the-fly.
