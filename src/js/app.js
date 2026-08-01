@@ -2535,7 +2535,7 @@ function renderAgentSelectors() {
     const agent = agentMetadata[id];
     const isActive = id === activeAgentId;
     return `
-      <div onclick="window.manuallySelectAgent('${id}')" class="relative group cursor-pointer transition-all duration-300 transform hover:scale-110 flex flex-col items-center">
+      <div onclick="window.manuallySelectAgent('${id}')" data-agent-id="${id}" class="relative group cursor-pointer transition-all duration-300 transform hover:scale-110 flex flex-col items-center">
         <div class="w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 relative ${
           isActive 
             ? 'border-primary bg-primary/10 shadow-[0_0_10px_rgba(14,165,233,0.35)] scale-105' 
