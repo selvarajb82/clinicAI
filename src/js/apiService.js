@@ -275,18 +275,22 @@ export async function syncOfflineQueue() {
 
   for (const item of queue) {
     try {
-      // Use no-cors and text/plain to bypass browser preflight checks and redirects of Google Web Apps
-      await fetch(GOOGLE_SHEETS_URL, {
+      // text/plain keeps this a simple request (no CORS preflight). The response is
+      // no longer opaque, so a rejected/errored sync surfaces here instead of being
+      // silently dropped from the queue.
+      const res = await fetch(GOOGLE_SHEETS_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: {
-          "Content-Type": "text/plain"
+          "Content-Type": "text/plain;charset=utf-8"
         },
         body: JSON.stringify({
           action: item.action,
           data: item.data
         })
       });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const out = await res.json();
+      if (out.status !== "success") throw new Error(out.message || "apps script rejected payload");
     } catch (e) {
       console.warn(`[Google Sheets Connection Error] Sync action ${item.id} failed. Postponed.`, e);
       isOnline = false;
