@@ -827,22 +827,31 @@
                 <h4 class="font-poppins font-extrabold text-xl text-slate-900 dark:text-white mb-6 text-center">Billing & Coverage FAQ</h4>
                 
                 <div class="glass-panel p-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 space-y-2" data-demo="insurance-faq-1">
-                  <h5 class="font-poppins font-bold text-sm text-slate-900 dark:text-white">What should I bring to verify my insurance coverage?</h5>
-                  <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+                  <h5 onclick="window.toggleInsuranceFaq(this)" class="font-poppins font-bold text-sm text-slate-900 dark:text-white cursor-pointer flex items-center justify-between gap-2">
+                    <span>What should I bring to verify my insurance coverage?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 flex-shrink-0 text-slate-400 transition-transform duration-200"></i>
+                  </h5>
+                  <p class="hidden text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
                     Please bring your current photo ID, physical insurance card, and any co-pay amount required by your policy. Our check-in team will scan and verify benefits upon your arrival.
                   </p>
                 </div>
 
                 <div class="glass-panel p-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 space-y-2" data-demo="insurance-faq-2">
-                  <h5 class="font-poppins font-bold text-sm text-slate-900 dark:text-white">What if the clinic is out-of-network for my insurance provider?</h5>
-                  <p class="text-xs text-slate-550 dark:text-slate-450 leading-relaxed">
+                  <h5 onclick="window.toggleInsuranceFaq(this)" class="font-poppins font-bold text-sm text-slate-900 dark:text-white cursor-pointer flex items-center justify-between gap-2">
+                    <span>What if the clinic is out-of-network for my insurance provider?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 flex-shrink-0 text-slate-400 transition-transform duration-200"></i>
+                  </h5>
+                  <p class="hidden text-xs text-slate-550 dark:text-slate-450 leading-relaxed">
                     If we are out-of-network, we can still file claims on your behalf as a courtesy. However, you may be responsible for a higher co-insurance percentage. We recommend checking out-of-network benefits with your insurer prior to scheduling.
                   </p>
                 </div>
 
                 <div class="glass-panel p-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 space-y-2" data-demo="insurance-faq-3">
-                  <h5 class="font-poppins font-bold text-sm text-slate-900 dark:text-white">Are there self-pay discounts for uninsured patients?</h5>
-                  <p class="text-xs text-slate-550 dark:text-slate-455 leading-relaxed">
+                  <h5 onclick="window.toggleInsuranceFaq(this)" class="font-poppins font-bold text-sm text-slate-900 dark:text-white cursor-pointer flex items-center justify-between gap-2">
+                    <span>Are there self-pay discounts for uninsured patients?</span>
+                    <i data-lucide="chevron-down" class="w-4 h-4 flex-shrink-0 text-slate-400 transition-transform duration-200"></i>
+                  </h5>
+                  <p class="hidden text-xs text-slate-550 dark:text-slate-455 leading-relaxed">
                     Yes! We offer simplified self-pay rates. A standard medical consultation begins at $95. Standard laboratory panels and childhood immunizations are priced competitively. Please contact our front desk for a comprehensive self-pay price list.
                   </p>
                 </div>

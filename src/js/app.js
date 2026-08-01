@@ -240,6 +240,19 @@ function initTabs() {
 }
 
 /* ==========================================================================
+   2b. Insurance FAQ Accordion
+   ========================================================================== */
+window.toggleInsuranceFaq = function(headerEl) {
+  const answer = headerEl.nextElementSibling;
+  // lucide.createIcons() replaces the <i data-lucide="..."> placeholder with an
+  // <svg>, so the icon has to be found by tag, not by the now-gone data-lucide attribute.
+  const icon = headerEl.querySelector('svg');
+  if (!answer) return;
+  const isOpen = answer.classList.toggle('hidden') === false;
+  if (icon) icon.classList.toggle('rotate-180', isOpen);
+};
+
+/* ==========================================================================
    3. GSAP Animations & Counters
    ========================================================================== */
 function initGSAP() {
