@@ -343,3 +343,9 @@ window.addEventListener('offline', () => {
   updateNetworkStatusUI(false);
 });
 updateNetworkStatusUI(navigator.onLine);
+
+// Queue-depth introspection for the automated demo recorder — only exposed
+// in dev or on the GitHub Pages deployment, never in a real production origin.
+if (import.meta.env.DEV || location.hostname.includes('github.io')) {
+  window.__demoQueueLength = () => getSyncQueue().length;
+}
