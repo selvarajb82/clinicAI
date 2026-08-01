@@ -9,6 +9,11 @@
 // Set this to your deployed Apps Script URL when ready.
 const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbzrqbvCyQRaxoy2jeP-hbxoEjkNfJZlhzgoFEE4vDZ7Y8uDOxLSc_fG2HfrkKag1B-How/exec";
 
+// A queue item that keeps failing (bad payload, permanently misconfigured
+// script URL, etc.) is dropped after this many attempts instead of retrying
+// forever and growing localStorage without bound.
+const MAX_SYNC_RETRIES = 8;
+
 // Global Connection state
 let isOnline = true;
 let isSyncing = false;
@@ -298,7 +303,12 @@ export async function syncOfflineQueue() {
       } catch (e) {
         console.warn(`[Google Sheets Connection Error] Sync action ${item.id} failed. Postponed.`, e);
         isOnline = false;
-        failedToSync.push(item);
+        const retries = (item.retries || 0) + 1;
+        if (retries >= MAX_SYNC_RETRIES) {
+          console.error(`[Google Sheets Sync] Dropping action ${item.id} (${item.action}) after ${retries} failed attempts.`, item.data);
+        } else {
+          failedToSync.push({ ...item, retries });
+        }
       }
     }
 
