@@ -1326,7 +1326,9 @@ Please contact our lab coordinator if you have questions about specific diagnost
     if (drugName) {
       logActivityEvent(`Pharmacy Agent searching openFDA for drug: "${drugName}"`);
       try {
-        const res = await fetch(`https://api.fda.gov/drug/label.json?search=openfda.brand_name:${encodeURIComponent(drugName)}&limit=1`);
+        const q = encodeURIComponent(`"${drugName}"`);
+        const search = `(openfda.brand_name:${q}+OR+openfda.generic_name:${q}+OR+openfda.substance_name:${q})`;
+        const res = await fetch(`https://api.fda.gov/drug/label.json?search=${search}&limit=1`);
         if (res.ok) {
           const data = await res.json();
           if (data.results && data.results.length > 0) {
