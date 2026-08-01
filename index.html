@@ -228,6 +228,165 @@
             </div>
           </section>
 
+          <!-- Agentic AI Healthcare Team Section -->
+          <section id="agentic-ai-team" class="py-16 bg-slate-50/50 dark:bg-slate-900/30 border-t border-slate-100 dark:border-slate-805">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-955/40 text-emerald-600 dark:text-emerald-450 border border-emerald-100 dark:border-emerald-900/50 text-xs font-semibold uppercase tracking-wider">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Agentic AI System Active
+                </div>
+                <h2 class="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-905 dark:text-white">
+                  Meet Our Agentic AI Healthcare Team
+                </h2>
+                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                  This is our <strong>Agentic AI Assistant</strong>. Please open the multi-agent chatbot to get your clinical doubts clarified, verify insurance policies, calculate invoices, check lab instructions, or schedule appointments.
+                </p>
+              </div>
+
+              <!-- Grid of AI Agents -->
+              <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Agent Card 1 -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-150 dark:border-slate-850 hover:border-primary/50 dark:hover:border-primary/50 transition duration-300 hover:scale-[1.02] flex flex-col justify-between group">
+                  <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-950/60 flex items-center justify-center text-xl">
+                      👋
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
+                      Sunny
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping"></span>
+                    </h3>
+                    <p class="text-[10px] text-slate-450 dark:text-slate-455 uppercase font-black tracking-wider">Receptionist</p>
+                    <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Schedules appointments, routes your queries, and explains general clinic details.
+                    </p>
+                  </div>
+                  <button onclick="document.getElementById('chatbot-toggle').click(); window.manuallySelectAgent('receptionist');" class="mt-4 w-full py-2 bg-slate-100 hover:bg-primary hover:text-white dark:bg-slate-800 dark:hover:bg-primary text-slate-700 dark:text-slate-300 rounded-lg text-[10px] font-bold transition">
+                    Start Consultation
+                  </button>
+                </div>
+
+                <!-- Agent Card 2 -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-150 dark:border-slate-850 hover:border-rose-500/50 dark:hover:border-rose-500/50 transition duration-300 hover:scale-[1.02] flex flex-col justify-between group">
+                  <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-950/60 flex items-center justify-center text-xl">
+                      👩‍⚕️
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">AI Nurse</h3>
+                    <p class="text-[10px] text-slate-450 dark:text-slate-455 uppercase font-black tracking-wider">Health Intake</p>
+                    <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Screens clinical symptoms, assesses duration & severity, and records your medical history.
+                    </p>
+                  </div>
+                  <button onclick="document.getElementById('chatbot-toggle').click(); window.manuallySelectAgent('nurse');" class="mt-4 w-full py-2 bg-slate-100 hover:bg-rose-500 hover:text-white dark:bg-slate-800 dark:hover:bg-rose-500 text-slate-700 dark:text-slate-300 rounded-lg text-[10px] font-bold transition">
+                    Screen Symptoms
+                  </button>
+                </div>
+
+                <!-- Agent Card 3 -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-150 dark:border-slate-850 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition duration-300 hover:scale-[1.02] flex flex-col justify-between group">
+                  <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 flex items-center justify-center text-xl">
+                      📋
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">SOAP Assistant</h3>
+                    <p class="text-[10px] text-slate-450 dark:text-slate-455 uppercase font-black tracking-wider">Clinical Notes</p>
+                    <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Compiles pre-screening data into clinical SOAP report drafts for immediate review.
+                    </p>
+                  </div>
+                  <button onclick="document.getElementById('chatbot-toggle').click(); window.manuallySelectAgent('doctor');" class="mt-4 w-full py-2 bg-slate-100 hover:bg-emerald-500 hover:text-white dark:bg-slate-800 dark:hover:bg-emerald-500 text-slate-700 dark:text-slate-300 rounded-lg text-[10px] font-bold transition">
+                    Generate SOAP Report
+                  </button>
+                </div>
+
+                <!-- Agent Card 4 -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-150 dark:border-slate-850 hover:border-purple-500/50 dark:hover:border-purple-500/50 transition duration-300 hover:scale-[1.02] flex flex-col justify-between group">
+                  <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 flex items-center justify-center text-xl">
+                      🛡️
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Coverage Coordinator</h3>
+                    <p class="text-[10px] text-slate-450 dark:text-slate-455 uppercase font-black tracking-wider">Insurance Benefits</p>
+                    <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Verifies medical coverage policy benefits, deductibles, and patient copays.
+                    </p>
+                  </div>
+                  <button onclick="document.getElementById('chatbot-toggle').click(); window.manuallySelectAgent('insurance');" class="mt-4 w-full py-2 bg-slate-100 hover:bg-purple-500 hover:text-white dark:bg-slate-800 dark:hover:bg-purple-500 text-slate-700 dark:text-slate-300 rounded-lg text-[10px] font-bold transition">
+                    Verify Coverage
+                  </button>
+                </div>
+
+                <!-- Agent Card 5 -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-150 dark:border-slate-850 hover:border-amber-500/50 dark:hover:border-amber-500/50 transition duration-300 hover:scale-[1.02] flex flex-col justify-between group">
+                  <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-950/60 flex items-center justify-center text-xl">
+                      💳
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Payments Auditor</h3>
+                    <p class="text-[10px] text-slate-450 dark:text-slate-455 uppercase font-black tracking-wider">Invoices & Pricing</p>
+                    <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Calculates consultation fee quotes, handles payments, and provides invoices.
+                    </p>
+                  </div>
+                  <button onclick="document.getElementById('chatbot-toggle').click(); window.manuallySelectAgent('billing');" class="mt-4 w-full py-2 bg-slate-100 hover:bg-amber-500 hover:text-white dark:bg-slate-800 dark:hover:bg-amber-500 text-slate-700 dark:text-slate-300 rounded-lg text-[10px] font-bold transition">
+                    View Invoices
+                  </button>
+                </div>
+
+                <!-- Agent Card 6 -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-150 dark:border-slate-850 hover:border-teal-500/50 dark:hover:border-teal-500/50 transition duration-300 hover:scale-[1.02] flex flex-col justify-between group">
+                  <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-950/60 flex items-center justify-center text-xl">
+                      🔬
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Diagnostics Guide</h3>
+                    <p class="text-[10px] text-slate-450 dark:text-slate-455 uppercase font-black tracking-wider">Lab Preparation</p>
+                    <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Explains fasting requirements and preparation rules for diagnostic lab work.
+                    </p>
+                  </div>
+                  <button onclick="document.getElementById('chatbot-toggle').click(); window.manuallySelectAgent('lab');" class="mt-4 w-full py-2 bg-slate-100 hover:bg-teal-500 hover:text-white dark:bg-slate-800 dark:hover:bg-teal-500 text-slate-700 dark:text-slate-300 rounded-lg text-[10px] font-bold transition">
+                    Get Lab Prep
+                  </button>
+                </div>
+
+                <!-- Agent Card 7 -->
+                <div class="glass-panel p-6 rounded-2xl border border-slate-150 dark:border-slate-850 hover:border-orange-500/50 dark:hover:border-orange-500/50 transition duration-300 hover:scale-[1.02] flex flex-col justify-between group">
+                  <div class="space-y-3">
+                    <div class="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-950/60 flex items-center justify-center text-xl">
+                      💊
+                    </div>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Medication Guide</h3>
+                    <p class="text-[10px] text-slate-450 dark:text-slate-455 uppercase font-black tracking-wider">Refills & FDA Guide</p>
+                    <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Queries live FDA database for guidelines, storage, and processes refills.
+                    </p>
+                  </div>
+                  <button onclick="document.getElementById('chatbot-toggle').click(); window.manuallySelectAgent('pharmacy');" class="mt-4 w-full py-2 bg-slate-100 hover:bg-orange-500 hover:text-white dark:bg-slate-800 dark:hover:bg-orange-500 text-slate-700 dark:text-slate-300 rounded-lg text-[10px] font-bold transition">
+                    Check Medication
+                  </button>
+                </div>
+
+                <!-- Launch Interactive Chat Card -->
+                <div class="glass-panel p-6 rounded-2xl border-2 border-dashed border-sky-400/40 bg-sky-500/5 dark:bg-sky-955/10 flex flex-col justify-between items-center text-center">
+                  <div class="space-y-2 mt-4">
+                    <i data-lucide="bot" class="w-8 h-8 text-primary dark:text-accent mx-auto animate-bounce"></i>
+                    <h3 class="font-bold text-sm text-slate-900 dark:text-white">Interactive Assistant</h3>
+                    <p class="text-[11.5px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Have questions or ready to book? Launch our full Agentic AI system and talk immediately!
+                    </p>
+                  </div>
+                  <button onclick="document.getElementById('chatbot-toggle').click();" class="mt-6 w-full py-2.5 bg-primary text-white hover:bg-primary/90 rounded-lg text-[10.5px] font-extrabold shadow-sm transition">
+                    💬 Launch Agentic AI
+                  </button>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
           <!-- Overview & Dashboard Panel -->
           <section class="py-12 bg-white dark:bg-slate-955/50 border-y border-slate-100 dark:border-slate-800">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
