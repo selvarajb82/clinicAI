@@ -77,7 +77,27 @@ function doPost(e) {
     var action = data.action;
     var payload = data.data;
     var ss = SpreadsheetApp.getActiveSpreadsheet();
-    
+
+    if (action === "UPDATE_STATUS") {
+      var bookSheet = ss.getSheetByName("Bookings");
+      if (!bookSheet) throw new Error("Bookings sheet not found");
+      var values = bookSheet.getDataRange().getValues();
+      var header = values[0];
+      var idCol = header.indexOf("Appointment ID");
+      var statusCol = header.indexOf("Status");
+      if (idCol === -1 || statusCol === -1) throw new Error("Bookings sheet is missing an Appointment ID or Status column");
+      var updated = false;
+      for (var i = 1; i < values.length; i++) {
+        if (values[i][idCol] === payload.id) {
+          bookSheet.getRange(i + 1, statusCol + 1).setValue(payload.status);
+          updated = true;
+          break;
+        }
+      }
+      if (!updated) throw new Error("No booking found with Appointment ID: " + payload.id);
+      return ContentService.createTextOutput(JSON.stringify({ status: "success", action: action })).setMimeType(ContentService.MimeType.JSON);
+    }
+
     var sheetName = "";
     var colHeaders = [];
     var rowData = [];
@@ -85,8 +105,8 @@ function doPost(e) {
     
     if (action === "CREATE") {
       sheetName = "Bookings";
-      colHeaders = ["Timestamp", "Name", "Email", "Phone", "Date", "Time", "Doctor", "Service", "Insurance", "Notes", "Source"];
-      rowData = [timestamp, payload.name, payload.email, payload.phone, payload.date, payload.time, payload.doctor, payload.service, payload.insurance, payload.notes, payload.source];
+      colHeaders = ["Timestamp", "Appointment ID", "Name", "Email", "Phone", "Date", "Time", "Doctor", "Service", "Insurance", "Notes", "Source", "Status"];
+      rowData = [timestamp, payload.id, payload.name, payload.email, payload.phone, payload.date, payload.time, payload.doctor, payload.service, payload.insurance, payload.notes, payload.source, payload.status];
     } else if (action === "CREATE_ASSESSMENT") {
       sheetName = "Assessments";
       colHeaders = ["Timestamp", "Patient Name", "Primary Concern", "Symptoms", "Duration", "Severity", "Medical History", "Nurse Summary", "Recommended Department", "Priority Level"];
