@@ -1,0 +1,22 @@
+{
+  "name": "clinic-ai",
+  "version": "1.0.0",
+  "description": "Sunshine Wellness Clinic Premium Web Application & AI Receptionist",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "healthcare",
+    "clinic",
+    "ai-receptionist",
+    "vite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
