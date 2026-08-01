@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sunshine Wellness Clinic - Modern Healthcare & AI Receptionist</title>
+  <meta name="description" content="Sunshine Wellness Clinic provides trusted healthcare with experienced physicians, same-day appointments, preventive care, and a 24/7 AI Receptionist. Book your appointment online today.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2D9CDB',
+            secondary: '#27AE60',
+            accent: '#56CCF2',
+            clinicBg: '#F7FBFD',
+            clinicDark: '#0F172A',
+            clinicCardDark: '#1E293B'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+            manrope: ['Manrope', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  
+  <!-- Main App Script -->
+  <script type="module" crossorigin src="./assets/index-ljwq_FNB.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-BUn3RJ2v.css">
+</head>
+<body class="bg-clinicBg dark:bg-clinicDark text-slate-800 dark:text-slate-200 transition-colors duration-300 font-sans">
+
+  <!-- Two-Column Layout Grid -->
+  <div class="min-h-screen flex flex-col lg:flex-row relative">
+
+    <!-- ==========================================================================
+         LEFT COLUMN (78% width on desktop): Main Website Content
+         ========================================================================== -->
+    <div class="flex-1 w-full lg:w-[78%] flex flex-col min-h-screen">
+      
+      <!-- STICKY NAVIGATION BAR -->
+      <nav class="sticky top-0 z-50 glass-nav transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-20">
+            
+            <!-- Logo (Clinic Name) -->
+            <a href="#home" onclick="if(window.switchToTab) window.switchToTab('home'); return false;" class="flex items-center gap-2.5 group">
+              <div class="w-10 h-10 rounded-xl overflow-hidden shadow border border-slate-200/50 dark:border-slate-800/80 flex items-center justify-center bg-white">
+                <img src="./assets/brand_symbol-Csp8jheD.jpg" alt="Sunshine Wellness Clinic Brand Symbol" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+              </div>
+              <div>
+                <span class="font-manrope font-extrabold text-xl tracking-tight text-slate-900 dark:text-white">Sunshine</span>
+                <span class="block text-xs font-bold text-primary tracking-widest uppercase">Wellness Clinic</span>
+              </div>
+            </a>
+
+            <!-- Desktop Tab Headers -->
+            <div class="hidden lg:flex items-center gap-6 font-poppins text-sm font-medium">
+              <a href="#home" data-tab="home" class="nav-tab-link text-primary dark:text-accent border-b-2 pb-1 transition border-primary dark:border-accent">Home</a>
+              <a href="#services" data-tab="services" class="nav-tab-link text-slate-600 dark:text-slate-300 border-b-2 pb-1 border-transparent hover:text-primary dark:hover:text-accent transition">Services</a>
+              <a href="#doctors" data-tab="doctors" class="nav-tab-link text-slate-600 dark:text-slate-300 border-b-2 pb-1 border-transparent hover:text-primary dark:hover:text-accent transition">Doctors</a>
+              <a href="#about" data-tab="about" class="nav-tab-link text-slate-600 dark:text-slate-300 border-b-2 pb-1 border-transparent hover:text-primary dark:hover:text-accent transition">About</a>
+              <a href="#insurance" data-tab="insurance" class="nav-tab-link text-slate-600 dark:text-slate-300 border-b-2 pb-1 border-transparent hover:text-primary dark:hover:text-accent transition">Insurance</a>
+              <a href="#testimonials" data-tab="testimonials" class="nav-tab-link text-slate-600 dark:text-slate-300 border-b-2 pb-1 border-transparent hover:text-primary dark:hover:text-accent transition">Testimonials</a>
+              <a href="#contact" data-tab="contact" class="nav-tab-link text-slate-600 dark:text-slate-300 border-b-2 pb-1 border-transparent hover:text-primary dark:hover:text-accent transition">Contact</a>
+              <a href="#appointments" data-tab="appointments" class="nav-tab-link text-slate-600 dark:text-slate-300 border-b-2 pb-1 border-transparent hover:text-primary dark:hover:text-accent transition flex items-center gap-1">Visits <span class="bg-emerald-500 text-white rounded-full text-[10px] w-4.5 h-4.5 flex items-center justify-center font-bold" id="nav-badge-count">0</span></a>
+            </div>
+
+            <!-- Right Side CTA & Theme Toggle -->
+            <div class="hidden md:flex items-center gap-4">
+              <!-- Theme Toggle -->
+              <button id="theme-toggle" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition text-slate-500 dark:text-slate-400" aria-label="Toggle theme">
+                <i id="theme-toggle-sun" data-lucide="sun" class="w-5 h-5 hidden"></i>
+                <i id="theme-toggle-moon" data-lucide="moon" class="w-5 h-5"></i>
+              </button>
+
+              <!-- Book Appointment Button -->
+              <a href="#appointments" onclick="if(window.switchToTab) window.switchToTab('appointments'); return false;" class="gradient-btn text-white px-6 py-2.5 rounded-xl font-poppins font-semibold text-sm shadow shadow-sky-500/20">
+                Book Appointment
+              </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="flex items-center gap-3 lg:hidden">
+              <button id="theme-toggle-mobile" onclick="document.getElementById('theme-toggle').click()" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">
+                <i data-lucide="sun" class="w-5 h-5 dark:block hidden"></i>
+                <i data-lucide="moon" class="w-5 h-5 dark:hidden block"></i>
+              </button>
+              <button id="mobile-menu-btn" class="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Mobile Navigation Tab Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 space-y-2 shadow-lg">
+          <a href="#home" data-tab="home" class="nav-tab-link mobile-nav-link block px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+          <a href="#services" data-tab="services" class="nav-tab-link mobile-nav-link block px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+          <a href="#doctors" data-tab="doctors" class="nav-tab-link mobile-nav-link block px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Doctors</a>
+          <a href="#about" data-tab="about" class="nav-tab-link mobile-nav-link block px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
+          <a href="#insurance" data-tab="insurance" class="nav-tab-link mobile-nav-link block px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Insurance</a>
+          <a href="#testimonials" data-tab="testimonials" class="nav-tab-link mobile-nav-link block px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Testimonials</a>
+          <a href="#contact" data-tab="contact" class="nav-tab-link mobile-nav-link block px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-medium" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+          <a href="#appointments" onclick="if(window.switchToTab) window.switchToTab('appointments'); document.getElementById('mobile-menu').classList.add('hidden'); return false;" class="mobile-nav-link block px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 font-medium flex items-center justify-between">Book Appointment <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i></a>
+        </div>
+      </nav>
+
+      <!-- TAB PAGE CONTENTS -->
+      <main class="min-h-[70vh]">
+
+        <!-- TAB: HOME -->
+        <div id="tab-home" class="tab-content transition-opacity duration-300">
+          
+          <!-- Hero Header Section -->
+          <section class="relative pt-10 pb-20 md:py-28 overflow-hidden">
+            <div class="absolute top-1/4 left-0 w-72 h-72 bg-primary/10 rounded-full blur-3xl -z-10 animate-float-slow"></div>
+            <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-accent/15 rounded-full blur-3xl -z-10 animate-float"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Content -->
+                <div class="lg:col-span-6 hero-content text-left space-y-6">
+                  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-sky-50 dark:bg-sky-955/40 text-primary dark:text-accent border border-sky-100 dark:border-sky-900/50 text-xs font-semibold uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    Accepting New Patients & Insurance
+                  </div>
+                  
+                  <h1 class="font-manrope font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[1.1] text-slate-900 dark:text-white">
+                    Your Health Begins With <span class="gradient-text">Compassionate Care</span>
+                  </h1>
+                  
+                  <p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-xl">
+                    Sunshine Wellness Clinic provides trusted healthcare with experienced physicians, same-day appointments, preventive care, and an AI Receptionist available 24/7.
+                  </p>
+
+                  <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#appointments" onclick="if(window.switchToTab) window.switchToTab('appointments'); return false;" class="gradient-btn text-white px-8 py-3.5 rounded-xl font-poppins font-semibold shadow-lg shadow-sky-500/20 flex items-center gap-2 hover:scale-105 transition">
+                      <i data-lucide="calendar" class="w-5 h-5"></i>
+                      Book Appointment
+                    </a>
+                    <button onclick="document.getElementById('chatbot-toggle').click(); document.getElementById('sidebar-chat-input').focus();" class="bg-white dark:bg-slate-800 text-slate-800 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 px-8 py-3.5 rounded-xl font-poppins font-semibold flex items-center gap-2 hover:scale-105 transition shadow-sm">
+                      <i data-lucide="message-square" class="w-5 h-5 text-secondary"></i>
+                      Chat with AI Assistant
+                    </button>
+                  </div>
+
+                  <!-- Highlights Grid -->
+                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-slate-100 dark:border-slate-800">
+                    <div>
+                      <h3 class="stat-counter font-manrope font-extrabold text-3xl text-slate-900 dark:text-white" data-target="15" data-suffix="+">0+</h3>
+                      <p class="text-xs text-slate-550 dark:text-slate-400 mt-1">Years Experience</p>
+                    </div>
+                    <div>
+                      <h3 class="stat-counter font-manrope font-extrabold text-3xl text-slate-900 dark:text-white" data-target="20000" data-suffix="+">0+</h3>
+                      <p class="text-xs text-slate-550 dark:text-slate-400 mt-1">Patients Served</p>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <h3 class="font-manrope font-extrabold text-3xl text-slate-900 dark:text-white">24/7</h3>
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                      </div>
+                      <p class="text-xs text-slate-550 dark:text-slate-400 mt-1">AI Receptionist</p>
+                    </div>
+                    <div>
+                      <h3 class="font-manrope font-extrabold text-3xl text-slate-900 dark:text-white">Same</h3>
+                      <p class="text-xs text-slate-550 dark:text-slate-400 mt-1">Day Visits</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hero Image (Right) -->
+                <div class="lg:col-span-6 relative hero-image-container flex justify-center">
+                  <div class="relative w-full max-w-lg md:max-w-xl">
+                    <div class="absolute -inset-4 bg-gradient-to-tr from-primary/10 to-accent/10 rounded-[2.5rem] blur-2xl -z-10"></div>
+                    
+                    <div class="rounded-[2.5rem] overflow-hidden border border-white/50 dark:border-slate-800 shadow-2xl relative aspect-[4/3] bg-slate-100 dark:bg-slate-950">
+                      <img src="./assets/hero-Cpu9BJO-.jpg" alt="Sunshine Wellness Clinic Reception" class="w-full h-full object-cover">
+                      <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent"></div>
+                    </div>
+
+                    <!-- Floating Widget 1: Same-Day Appointments -->
+                    <div class="absolute -left-6 bottom-12 glass-panel py-3.5 px-5 rounded-2xl shadow-xl flex items-center gap-3 border border-white/65 hover:scale-105 transition duration-300 hero-stat-card">
+                      <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 flex items-center justify-center text-emerald-600 dark:text-emerald-450">
+                        <i data-lucide="check-circle" class="w-6 h-6"></i>
+                      </div>
+                      <div>
+                        <h4 class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Same-Day</h4>
+                        <p class="text-sm font-extrabold text-slate-800 dark:text-white">Appointments Open</p>
+                      </div>
+                    </div>
+
+                    <!-- Floating Widget 2: AI Receptionist -->
+                    <div class="absolute -right-6 top-12 glass-panel py-3.5 px-5 rounded-2xl shadow-xl flex items-center gap-3 border border-white/65 hover:scale-105 transition duration-300 hero-stat-card">
+                      <div class="w-10 h-10 rounded-xl bg-sky-100 dark:bg-sky-950/60 flex items-center justify-center text-primary dark:text-accent">
+                        <i data-lucide="bot" class="w-6 h-6"></i>
+                      </div>
+                      <div>
+                        <div class="flex items-center gap-1.5">
+                          <h4 class="text-xs text-slate-400 font-semibold uppercase tracking-wider">AI Receptionist</h4>
+                          <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-ping"></span>
+                        </div>
+                        <p class="text-sm font-extrabold text-slate-800 dark:text-white">Online 24/7</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <!-- Overview & Dashboard Panel -->
+          <section class="py-12 bg-white dark:bg-slate-955/50 border-y border-slate-100 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="glass-panel p-8 rounded-3xl border border-sky-100 dark:border-slate-800 shadow-sm grid md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-8 space-y-3">
+                  <span class="text-xs font-bold text-emerald-500 uppercase tracking-widest flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Clinic Status Update
+                  </span>
+                  <h3 class="font-manrope font-extrabold text-2xl text-slate-900 dark:text-white">We are open for consultations today</h3>
+                  <p class="text-sm text-slate-550 dark:text-slate-400 max-w-2xl">
+                    Saturday hours: 9:00 AM – 1:00 PM. Our practitioners Dr. Sarah Lin (Pediatrics) and Dr. Marcus Vance (General Medicine) are on schedule. Walk-ins are accommodated based on triage guidelines.
+                  </p>
+                </div>
+                <div class="md:col-span-4 flex flex-col sm:flex-row gap-3 justify-end">
+                  <a href="#doctors" onclick="if(window.switchToTab) window.switchToTab('doctors'); return false;" class="px-5 py-3 border border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 transition rounded-xl font-poppins text-xs font-bold text-center">
+                    Meet Duty Doctors
+                  </a>
+                  <a href="#appointments" onclick="if(window.switchToTab) window.switchToTab('appointments'); return false;" class="px-5 py-3 gradient-btn text-white transition rounded-xl font-poppins text-xs font-bold text-center">
+                    Book Next Open Slot
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Quick-Actions Cards -->
+          <section class="py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
+                <h3 class="font-manrope font-extrabold text-2xl text-slate-900 dark:text-white">Start Navigating Our Clinic</h3>
+                <p class="text-xs text-slate-550 dark:text-slate-400">Quickly explore services, accepted insurances, and medical profiles below.</p>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-panel p-6 rounded-2xl border border-slate-100 dark:border-slate-800/80 shadow-sm text-center space-y-4">
+                  <div class="w-12 h-12 rounded-full bg-sky-100 dark:bg-sky-955/60 text-primary dark:text-accent flex items-center justify-center mx-auto"><i data-lucide="activity" class="w-6 h-6"></i></div>
+                  <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white">Our Services</h4>
+                  <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">Pediatrics, lab diagnostics, annual physicals, immunizations, and preventive therapies.</p>
+                  <a href="#services" onclick="if(window.switchToTab) window.switchToTab('services'); return false;" class="inline-flex items-center text-xs font-semibold text-primary dark:text-accent hover:gap-1.5 transition gap-1">Explore Services <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl border border-slate-100 dark:border-slate-800/80 shadow-sm text-center space-y-4">
+                  <div class="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-955/60 text-secondary flex items-center justify-center mx-auto"><i data-lucide="users" class="w-6 h-6"></i></div>
+                  <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white">Board-Certified Doctors</h4>
+                  <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">Meet our clinical staff, review language capabilities, clinical experience, and booking dates.</p>
+                  <a href="#doctors" onclick="if(window.switchToTab) window.switchToTab('doctors'); return false;" class="inline-flex items-center text-xs font-semibold text-primary dark:text-accent hover:gap-1.5 transition gap-1">Meet Providers <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl border border-slate-100 dark:border-slate-800/80 shadow-sm text-center space-y-4">
+                  <div class="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-955/60 text-purple-500 flex items-center justify-center mx-auto"><i data-lucide="shield-check" class="w-6 h-6"></i></div>
+                  <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white">Insurance & Billing</h4>
+                  <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">Check if we accept your provider, review co-pay structures, and explore direct billing guidelines.</p>
+                  <a href="#insurance" onclick="if(window.switchToTab) window.switchToTab('insurance'); return false;" class="inline-flex items-center text-xs font-semibold text-primary dark:text-accent hover:gap-1.5 transition gap-1">Verify Insurance <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- TAB: SERVICES -->
+        <div id="tab-services" class="tab-content hidden transition-opacity duration-300">
+          <section class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              
+              <!-- Header -->
+              <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold text-primary dark:text-accent uppercase tracking-widest">Our Medical Portfolio</h2>
+                <h3 class="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
+                  Sunshine Medical Services & Treatments
+                </h3>
+                <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">
+                  Sunshine Wellness Clinic provides comprehensive primary and pediatric care. Check our extensive catalog of services below.
+                </p>
+              </div>
+
+              <!-- Detailed Services Accordions -->
+              <div class="space-y-6 max-w-5xl mx-auto">
+                
+                <!-- Pediatrics -->
+                <div class="glass-panel p-6 md:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden">
+                  <div class="absolute right-0 top-0 w-24 h-24 bg-pink-100/55 dark:bg-pink-955/10 rounded-bl-[4rem] flex items-center justify-center text-pink-500 font-bold">
+                    <i data-lucide="baby" class="w-10 h-10"></i>
+                  </div>
+                  <div class="pr-12 space-y-4">
+                    <h4 class="font-poppins font-extrabold text-xl text-slate-900 dark:text-white flex items-center gap-2">
+                      Pediatrics & Child Care
+                    </h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-355 leading-relaxed">
+                      We provide friendly and professional developmental checkups, growth metrics charting, newborn health advice, sports/school physical exams, and childhood allergy treatments.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-2 text-xs text-slate-500 dark:text-slate-400">
+                      <div class="flex items-center gap-1.5">✔️ Newborn consultations & milestone checkups</div>
+                      <div class="flex items-center gap-1.5">✔️ School, camp, and sports physicals</div>
+                      <div class="flex items-center gap-1.5">✔️ Childhood asthma and allergy tracking</div>
+                      <div class="flex items-center gap-1.5">✔️ Custom vaccine timelines</div>
+                    </div>
+                    <a href="#appointments" onclick="if(window.switchToTab) { window.switchToTab('appointments'); document.getElementById('booking-service').value = 'Pediatrics'; } return false;" class="inline-flex px-4 py-2 bg-pink-50 hover:bg-pink-100 dark:bg-pink-955/20 dark:hover:bg-pink-955/40 text-pink-600 dark:text-pink-400 text-xs font-bold rounded-lg transition">
+                      Book Pediatrics Visit
+                    </a>
+                  </div>
+                </div>
+
+                <!-- General Medicine -->
+                <div class="glass-panel p-6 md:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden">
+                  <div class="absolute right-0 top-0 w-24 h-24 bg-sky-100/55 dark:bg-sky-955/10 rounded-bl-[4rem] flex items-center justify-center text-primary font-bold">
+                    <i data-lucide="stethoscope" class="w-10 h-10"></i>
+                  </div>
+                  <div class="pr-12 space-y-4">
+                    <h4 class="font-poppins font-extrabold text-xl text-slate-900 dark:text-white">
+                      General Medicine & Family Practice
+                    </h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-355 leading-relaxed">
+                      Comprehensive care for adults and seniors, including medical screening, minor illness treatments, chronic hypertension management, and lifestyle medicine.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-2 text-xs text-slate-500 dark:text-slate-400">
+                      <div class="flex items-center gap-1.5">✔️ Management of hypertension, diabetes, & lipid panels</div>
+                      <div class="flex items-center gap-1.5">✔️ Chronic disease monitoring and lifestyle audits</div>
+                      <div class="flex items-center gap-1.5">✔️ Minor wound care and infection treatments</div>
+                      <div class="flex items-center gap-1.5">✔️ Comprehensive adult diagnostic assessments</div>
+                    </div>
+                    <a href="#appointments" onclick="if(window.switchToTab) { window.switchToTab('appointments'); document.getElementById('booking-service').value = 'General Medicine'; } return false;" class="inline-flex px-4 py-2 bg-sky-50 hover:bg-sky-100 dark:bg-sky-955/20 dark:hover:bg-sky-955/40 text-primary dark:text-accent text-xs font-bold rounded-lg transition">
+                      Book General Medical Consultation
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Lab Work -->
+                <div class="glass-panel p-6 md:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden">
+                  <div class="absolute right-0 top-0 w-24 h-24 bg-amber-100/55 dark:bg-amber-955/10 rounded-bl-[4rem] flex items-center justify-center text-amber-500 font-bold">
+                    <i data-lucide="test-tube-2" class="w-10 h-10"></i>
+                  </div>
+                  <div class="pr-12 space-y-4">
+                    <h4 class="font-poppins font-extrabold text-xl text-slate-900 dark:text-white">
+                      Laboratory Testing & Diagnostics
+                    </h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-355 leading-relaxed">
+                      Our in-house clinical laboratory provides rapid testing and blood draws with fast results. We coordinate directly with your physician for review.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-2 text-xs text-slate-500 dark:text-slate-400">
+                      <div class="flex items-center gap-1.5">✔️ Complete Blood Count (CBC) and Metabolic Panels</div>
+                      <div class="flex items-center gap-1.5">✔️ Lipid profile testing (cholesterol levels)</div>
+                      <div class="flex items-center gap-1.5">✔️ Rapid Strep, Influenza, and Covid-19 checks</div>
+                      <div class="flex items-center gap-1.5">✔️ Urine testing and micro-culture analysis</div>
+                    </div>
+                    <a href="#appointments" onclick="if(window.switchToTab) { window.switchToTab('appointments'); document.getElementById('booking-service').value = 'Laboratory Testing'; } return false;" class="inline-flex px-4 py-2 bg-amber-50 hover:bg-amber-100 dark:bg-amber-955/20 dark:hover:bg-amber-955/40 text-amber-600 dark:text-amber-400 text-xs font-bold rounded-lg transition">
+                      Schedule Laboratory Diagnostics
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Physicals & Immunizations -->
+                <div class="glass-panel p-6 md:p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm relative overflow-hidden">
+                  <div class="absolute right-0 top-0 w-24 h-24 bg-emerald-100/55 dark:bg-emerald-955/10 rounded-bl-[4rem] flex items-center justify-center text-secondary font-bold">
+                    <i data-lucide="syringe" class="w-10 h-10"></i>
+                  </div>
+                  <div class="pr-12 space-y-4">
+                    <h4 class="font-poppins font-extrabold text-xl text-slate-900 dark:text-white">
+                      Annual Physicals, Vaccinations & Boosters
+                    </h4>
+                    <p class="text-sm text-slate-600 dark:text-slate-355 leading-relaxed">
+                      Maintain compliance with work, school, and travel immunizations. We stock flu shots, tetanus boosters (Tdap), MMR, shingles vaccines, and complete wellness physicals.
+                    </p>
+                    <div class="grid sm:grid-cols-2 gap-2 text-xs text-slate-500 dark:text-slate-400">
+                      <div class="flex items-center gap-1.5">✔️ Annual physical exams & screenings</div>
+                      <div class="flex items-center gap-1.5">✔️ Employee health compliance physicals</div>
+                      <div class="flex items-center gap-1.5">✔️ Routine Flu, Pneumonia booster vaccines</div>
+                      <div class="flex items-center gap-1.5">✔️ Tdap, MMR, & Meningitis booster doses</div>
+                    </div>
+                    <a href="#appointments" onclick="if(window.switchToTab) { window.switchToTab('appointments'); document.getElementById('booking-service').value = 'Vaccinations & Immunizations'; } return false;" class="inline-flex px-4 py-2 bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-955/20 dark:hover:bg-emerald-955/40 text-emerald-650 dark:text-emerald-450 text-xs font-bold rounded-lg transition">
+                      Book Physical / Vaccine
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB: DOCTORS -->
+        <div id="tab-doctors" class="tab-content hidden transition-opacity duration-300">
+          <section class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              
+              <!-- Header -->
+              <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-xs font-bold text-primary dark:text-accent uppercase tracking-widest">Our Medical Staff</h2>
+                <h3 class="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
+                  Meet the Sunshine Physicians
+                </h3>
+                <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">
+                  Our clinic houses dedicated practitioners with diverse training backgrounds, all sharing a goal of helping you stay healthy.
+                </p>
+              </div>
+
+              <!-- Doctor Profiles Grid -->
+              <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Dr. Sarah Lin -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col md:flex-row bg-white dark:bg-slate-900 interactive-card">
+                  <div class="md:w-2/5 relative min-h-[220px] bg-slate-100 dark:bg-slate-950">
+                    <img src="./assets/dr_sarah_lin-8eJQcVdA.jpg" alt="Dr. Sarah Lin" class="w-full h-full object-cover absolute inset-0">
+                  </div>
+                  <div class="md:w-3/5 p-6 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                      <div>
+                        <h4 class="font-poppins font-bold text-xl text-slate-900 dark:text-white">Dr. Sarah Lin, MD</h4>
+                        <p class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-widest">Pediatric Medicine</p>
+                      </div>
+                      <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+                        Dr. Lin has over 12 years of experience focusing on early growth milestones, childhood immunizations, and asthma care. Educated at the UC San Francisco School of Medicine.
+                      </p>
+                      <div class="text-[11px] text-slate-450 dark:text-slate-550 space-y-1">
+                        <div>🎓 <strong>Board Certification:</strong> American Board of Pediatrics</div>
+                        <div>🗣️ <strong>Languages:</strong> English, Mandarin</div>
+                        <div>📅 <strong>Schedule:</strong> Monday - Thursday</div>
+                      </div>
+                    </div>
+                    <button onclick="if(window.bookDoctor) window.bookDoctor('Dr. Sarah Lin');" class="w-full text-center gradient-btn text-white py-2.5 rounded-xl font-poppins font-bold text-xs shadow mt-2">
+                      Book with Dr. Lin
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Dr. Marcus Vance -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col md:flex-row bg-white dark:bg-slate-900 interactive-card">
+                  <div class="md:w-2/5 relative min-h-[220px] bg-slate-100 dark:bg-slate-950">
+                    <img src="./assets/dr_marcus_vance-6ykbGNVd.jpg" alt="Dr. Marcus Vance" class="w-full h-full object-cover absolute inset-0">
+                  </div>
+                  <div class="md:w-3/5 p-6 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                      <div>
+                        <h4 class="font-poppins font-bold text-xl text-slate-900 dark:text-white">Dr. Marcus Vance, MD</h4>
+                        <p class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-widest">Family Practice</p>
+                      </div>
+                      <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+                        Dr. Vance handles chronic disease management (hypertension, diabetes), preventative cardiovascular health, and general medical care. Educated at Johns Hopkins School of Medicine.
+                      </p>
+                      <div class="text-[11px] text-slate-450 dark:text-slate-555 space-y-1">
+                        <div>🎓 <strong>Board Certification:</strong> American Board of Family Medicine</div>
+                        <div>🗣️ <strong>Languages:</strong> English, Spanish</div>
+                        <div>📅 <strong>Schedule:</strong> Monday - Friday</div>
+                      </div>
+                    </div>
+                    <button onclick="if(window.bookDoctor) window.bookDoctor('Dr. Marcus Vance');" class="w-full text-center gradient-btn text-white py-2.5 rounded-xl font-poppins font-bold text-xs shadow mt-2">
+                      Book with Dr. Vance
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Dr. Elena Rostova -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col md:flex-row bg-white dark:bg-slate-900 interactive-card">
+                  <div class="md:w-2/5 relative min-h-[220px] bg-slate-100 dark:bg-slate-950">
+                    <img src="./assets/dr_elena_rostova-LwqwZouk.jpg" alt="Dr. Elena Rostova" class="w-full h-full object-cover absolute inset-0">
+                  </div>
+                  <div class="md:w-3/5 p-6 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                      <div>
+                        <h4 class="font-poppins font-bold text-xl text-slate-900 dark:text-white">Dr. Elena Rostova, MD</h4>
+                        <p class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-widest">Preventive Care & Health Coach</p>
+                      </div>
+                      <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+                        Dr. Rostova is dedicated to preventing illness through lifestyle plans, medical weight coaching, and women's health screenings. Educated at Columbia University.
+                      </p>
+                      <div class="text-[11px] text-slate-450 dark:text-slate-550 space-y-1">
+                        <div>🎓 <strong>Board Certification:</strong> American Board of Preventive Medicine</div>
+                        <div>🗣️ <strong>Languages:</strong> English, Russian</div>
+                        <div>📅 <strong>Schedule:</strong> Wednesday - Saturday</div>
+                      </div>
+                    </div>
+                    <button onclick="if(window.bookDoctor) window.bookDoctor('Dr. Elena Rostova');" class="w-full text-center gradient-btn text-white py-2.5 rounded-xl font-poppins font-bold text-xs shadow mt-2">
+                      Book with Dr. Rostova
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Dr. Jonathan Patel -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col md:flex-row bg-white dark:bg-slate-900 interactive-card">
+                  <div class="md:w-2/5 relative min-h-[220px] bg-slate-100 dark:bg-slate-950">
+                    <img src="./assets/dr_jonathan_patel-CU6C57bp.jpg" alt="Dr. Jonathan Patel" class="w-full h-full object-cover absolute inset-0">
+                  </div>
+                  <div class="md:w-3/5 p-6 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-2">
+                      <div>
+                        <h4 class="font-poppins font-bold text-xl text-slate-900 dark:text-white">Dr. Jonathan Patel, MD</h4>
+                        <p class="text-xs font-semibold text-primary dark:text-accent uppercase tracking-widest">Cardiology & Internal Medicine</p>
+                      </div>
+                      <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+                        Dr. Patel specializes in internal medicine diagnostics, adult cardiac screening, preventive lipid management, and cardiovascular risk audits. Educated at Harvard Medical School.
+                      </p>
+                      <div class="text-[11px] text-slate-450 dark:text-slate-555 space-y-1">
+                        <div>🎓 <strong>Board Certification:</strong> American Board of Internal Medicine</div>
+                        <div>🗣️ <strong>Languages:</strong> English, Hindi</div>
+                        <div>📅 <strong>Schedule:</strong> Tuesday - Friday</div>
+                      </div>
+                    </div>
+                    <button onclick="if(window.bookDoctor) window.bookDoctor('Dr. Jonathan Patel');" class="w-full text-center gradient-btn text-white py-2.5 rounded-xl font-poppins font-bold text-xs shadow mt-2">
+                      Book with Dr. Patel
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB: ABOUT -->
+        <div id="tab-about" class="tab-content hidden transition-opacity duration-300">
+          <section class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+              
+              <!-- Header -->
+              <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-xs font-bold text-primary dark:text-accent uppercase tracking-widest">Our Practice Standards</h2>
+                <h3 class="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
+                  Dedicated to Wellness and Innovation
+                </h3>
+                <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">
+                  Sunshine Wellness Clinic has been serving our community since 2011. We combine the warmth of traditional family practice with the accessibility of modern digital health.
+                </p>
+              </div>
+
+              <!-- Why Choose Us Grid -->
+              <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-panel p-6 rounded-2xl choose-card border border-slate-100 dark:border-slate-800 shadow-sm interactive-card">
+                  <div class="w-10 h-10 rounded-lg bg-sky-100 dark:bg-sky-955/60 text-primary dark:text-accent flex items-center justify-center mb-4"><i data-lucide="award" class="w-5 h-5"></i></div>
+                  <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white mb-1.5">Experienced Staff</h4>
+                  <p class="text-xs text-slate-550 dark:text-slate-455 leading-relaxed">All our medical directors and associates are board-certified with extensive hospital experience.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl choose-card border border-slate-100 dark:border-slate-800/80 shadow-sm interactive-card">
+                  <div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-955/60 text-emerald-650 dark:text-emerald-455 flex items-center justify-center mb-4"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                  <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white mb-1.5">Same-Day Visits</h4>
+                  <p class="text-xs text-slate-550 dark:text-slate-455 leading-relaxed">We keep dedicated slots open every day to handle sudden illnesses and same-day consultations.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl choose-card border border-slate-100 dark:border-slate-800/80 shadow-sm interactive-card">
+                  <div class="w-10 h-10 rounded-lg bg-sky-100 dark:bg-sky-955/60 text-primary dark:text-accent flex items-center justify-center mb-4"><i data-lucide="bot" class="w-5 h-5"></i></div>
+                  <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white mb-1.5">AI Assistant</h4>
+                  <p class="text-xs text-slate-550 dark:text-slate-455 leading-relaxed">Ask clinic questions, verify accepted insurances, and pre-book visits at any hour of the night.</p>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl choose-card border border-slate-100 dark:border-slate-800/80 shadow-sm interactive-card">
+                  <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-955/60 text-purple-500 flex items-center justify-center mb-4"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+                  <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white mb-1.5">Insurance Help</h4>
+                  <p class="text-xs text-slate-550 dark:text-slate-455 leading-relaxed">We work directly with most major carriers to verify benefits and process claim paperwork for you.</p>
+                </div>
+              </div>
+
+              <!-- History & Mission Detail -->
+              <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto pt-8 items-center">
+                <div class="space-y-4">
+                  <h4 class="font-poppins font-extrabold text-2xl text-slate-900 dark:text-white">Our Mission & Values</h4>
+                  <p class="text-sm text-slate-650 dark:text-slate-350 leading-relaxed">
+                    We believe that health is not merely the absence of disease, but a state of complete physical, mental, and social well-being. Our mission is to deliver comprehensive, compassionate primary care tailored to each patient.
+                  </p>
+                  <div class="space-y-2 text-xs">
+                    <div class="flex items-start gap-2">🔹 <strong>Integrity & Trust:</strong> Clear communication about diagnosis and billing.</div>
+                    <div class="flex items-start gap-2">🔹 <strong>Empathetic Care:</strong> Building long-term health partnerships with families.</div>
+                    <div class="flex items-start gap-2">🔹 <strong>HIPAA & Safety:</strong> Strict compliance with data safety standards.</div>
+                  </div>
+                </div>
+                <div class="glass-panel p-8 rounded-3xl border border-sky-100 dark:border-slate-800 shadow-sm space-y-4">
+                  <h4 class="font-poppins font-bold text-lg text-slate-900 dark:text-white">Patient Rights & Policy</h4>
+                  <p class="text-xs text-slate-550 dark:text-slate-450 leading-relaxed">
+                    As a patient at Sunshine Wellness Clinic, you have the right to receive detailed information about your treatment schedule, review clinical options with your physician, and receive clear estimates of all medical fees before diagnostics are conducted.
+                  </p>
+                  <p class="text-xs text-slate-550 dark:text-slate-455 leading-relaxed">
+                    We operate in full compliance with state health mandates and federal privacy policies. For queries regarding your patient portal records or charts, please contact our billing desk.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB: INSURANCE -->
+        <div id="tab-insurance" class="tab-content hidden transition-opacity duration-300">
+          <section class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+              
+              <!-- Header -->
+              <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-xs font-bold text-primary dark:text-accent uppercase tracking-widest">Direct Billing & Coverage</h2>
+                <h3 class="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
+                  Insurance Acceptance & Billing Directory
+                </h3>
+                <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">
+                  Sunshine Wellness Clinic accepts most major insurance providers. Review our coverage directory and billing FAQs below.
+                </p>
+              </div>
+
+              <!-- Accepted Insurance Provider Grid -->
+              <div class="max-w-5xl mx-auto glass-panel p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm space-y-8">
+                <h4 class="font-poppins font-bold text-lg text-slate-900 dark:text-white text-center">Accepted Primary Providers</h4>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                  <div class="p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 hover:border-primary/50 transition">
+                    <i data-lucide="shield" class="text-sky-500 w-6 h-6 mx-auto mb-2"></i>
+                    <span class="text-sm font-bold block text-slate-700 dark:text-slate-350">Anthem Blue Cross</span>
+                  </div>
+                  <div class="p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 hover:border-primary/50 transition">
+                    <span class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-black mx-auto mb-2">C</span>
+                    <span class="text-sm font-bold block text-slate-700 dark:text-slate-350">Cigna Healthcare</span>
+                  </div>
+                  <div class="p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 hover:border-primary/50 transition">
+                    <span class="text-amber-500 font-extrabold text-lg block mb-1">U</span>
+                    <span class="text-sm font-bold block text-slate-700 dark:text-slate-350">UnitedHealthcare</span>
+                  </div>
+                  <div class="p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 hover:border-primary/50 transition">
+                    <span class="text-red-500 font-bold text-lg block mb-1">ae</span>
+                    <span class="text-sm font-bold block text-slate-700 dark:text-slate-350">Aetna Inc.</span>
+                  </div>
+                  <div class="p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 hover:border-primary/50 transition">
+                    <i data-lucide="shield-alert" class="text-blue-600 w-6 h-6 mx-auto mb-2"></i>
+                    <span class="text-sm font-bold block text-slate-700 dark:text-slate-350">Blue Cross Blue Shield</span>
+                  </div>
+                  <div class="p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 hover:border-primary/50 transition">
+                    <span class="text-lg block mb-1">🇺🇸</span>
+                    <span class="text-sm font-bold block text-slate-700 dark:text-slate-350">Medicare</span>
+                  </div>
+                  <div class="p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 hover:border-primary/50 transition">
+                    <span class="text-lg block mb-1">🏛️</span>
+                    <span class="text-sm font-bold block text-slate-700 dark:text-slate-350">Medicaid</span>
+                  </div>
+                  <div class="p-4 rounded-xl border border-slate-100 dark:border-slate-800/80 hover:border-primary/50 transition">
+                    <i data-lucide="file-text" class="text-slate-400 w-6 h-6 mx-auto mb-2"></i>
+                    <span class="text-sm font-bold block text-slate-700 dark:text-slate-350">Other Major Plans</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Billing FAQ Accordion -->
+              <div class="max-w-4xl mx-auto space-y-4">
+                <h4 class="font-poppins font-extrabold text-xl text-slate-900 dark:text-white mb-6 text-center">Billing & Coverage FAQ</h4>
+                
+                <div class="glass-panel p-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 space-y-2">
+                  <h5 class="font-poppins font-bold text-sm text-slate-900 dark:text-white">What should I bring to verify my insurance coverage?</h5>
+                  <p class="text-xs text-slate-550 dark:text-slate-400 leading-relaxed">
+                    Please bring your current photo ID, physical insurance card, and any co-pay amount required by your policy. Our check-in team will scan and verify benefits upon your arrival.
+                  </p>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 space-y-2">
+                  <h5 class="font-poppins font-bold text-sm text-slate-900 dark:text-white">What if the clinic is out-of-network for my insurance provider?</h5>
+                  <p class="text-xs text-slate-550 dark:text-slate-450 leading-relaxed">
+                    If we are out-of-network, we can still file claims on your behalf as a courtesy. However, you may be responsible for a higher co-insurance percentage. We recommend checking out-of-network benefits with your insurer prior to scheduling.
+                  </p>
+                </div>
+
+                <div class="glass-panel p-5 rounded-2xl border border-slate-100 dark:border-slate-800/80 space-y-2">
+                  <h5 class="font-poppins font-bold text-sm text-slate-900 dark:text-white">Are there self-pay discounts for uninsured patients?</h5>
+                  <p class="text-xs text-slate-550 dark:text-slate-455 leading-relaxed">
+                    Yes! We offer simplified self-pay rates. A standard medical consultation begins at $95. Standard laboratory panels and childhood immunizations are priced competitively. Please contact our front desk for a comprehensive self-pay price list.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB: TESTIMONIALS -->
+        <div id="tab-testimonials" class="tab-content hidden transition-opacity duration-300">
+          <section class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+              
+              <!-- Header -->
+              <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-xs font-bold text-primary dark:text-accent uppercase tracking-widest">Patient Success Stories</h2>
+                <h3 class="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
+                  Sunshine Wellness Patient Testimonials
+                </h3>
+                <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+                <p class="text-slate-600 dark:text-slate-400">
+                  Read feedback and success stories shared by verified patients who have received treatment at our clinic.
+                </p>
+              </div>
+
+              <!-- Main Carousel Slider -->
+              <div class="max-w-4xl mx-auto">
+                <div id="testimonials-wrapper" class="relative min-h-[340px] md:min-h-[280px] w-full flex items-center justify-center">
+                  <div id="testimonials-container" class="relative w-full h-full">
+                    <!-- Injected in app.js -->
+                  </div>
+                </div>
+
+                <!-- Dots & buttons -->
+                <div class="flex items-center justify-between mt-6">
+                  <button id="testimonial-prev" class="p-3 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 shadow-sm transition" aria-label="Previous"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                  <div id="testimonials-dots" class="flex gap-2"></div>
+                  <button id="testimonial-next" class="p-3 rounded-full border border-slate-200 dark:border-slate-800 hover:bg-white dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 shadow-sm transition" aria-label="Next"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+                </div>
+              </div>
+
+              <!-- Additional verified reviews grid -->
+              <div class="max-w-5xl mx-auto space-y-6">
+                <h4 class="font-poppins font-extrabold text-xl text-slate-900 dark:text-white text-center">More Verified Reviews</h4>
+                <div class="grid md:grid-cols-3 gap-6">
+                  
+                  <div class="glass-panel p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm space-y-3">
+                    <span class="text-amber-500 block">★★★★★</span>
+                    <p class="text-xs text-slate-550 dark:text-slate-400 italic">"The clinic is incredibly clean, and the nurse practitioner was very thorough. Highly recommended for physical exams."</p>
+                    <div class="text-[10px] text-slate-400">- Arthur K., July 2026</div>
+                  </div>
+
+                  <div class="glass-panel p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm space-y-3">
+                    <span class="text-amber-500 block">★★★★★</span>
+                    <p class="text-xs text-slate-550 dark:text-slate-400 italic">"Dr. Patel took his time to explain my cardiac risk profiling results in plain language. Very comforting clinical style."</p>
+                    <div class="text-[10px] text-slate-400">- Linda M., June 2026</div>
+                  </div>
+
+                  <div class="glass-panel p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm space-y-3">
+                    <span class="text-amber-500 block">★★★★★</span>
+                    <p class="text-xs text-slate-550 dark:text-slate-400 italic">"Amazing pediatrics support! Same-day immunization appointments saved us right before the school year started."</p>
+                    <div class="text-[10px] text-slate-400">- Jessica T., August 2026</div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB: CONTACT -->
+        <div id="tab-contact" class="tab-content hidden transition-opacity duration-300">
+          <section class="py-16 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+              
+              <!-- Header -->
+              <div class="text-center max-w-3xl mx-auto space-y-4">
+                <h2 class="text-xs font-bold text-primary dark:text-accent uppercase tracking-widest">Connect with Sunshine Wellness</h2>
+                <h3 class="font-manrope font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
+                  We Are Ready to Assist You
+                </h3>
+                <div class="h-1 w-20 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+              </div>
+
+              <!-- Contact Content Grid -->
+              <div class="grid lg:grid-cols-12 gap-12 items-stretch max-w-6xl mx-auto">
+                
+                <!-- Cards (Left) -->
+                <div class="lg:col-span-5 space-y-6 flex flex-col justify-between">
+                  
+                  <div class="glass-panel p-6 rounded-2xl flex items-start gap-4 border border-slate-100 dark:border-slate-800 shadow-sm hover:scale-[1.01] transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-955/60 text-primary dark:text-accent flex items-center justify-center flex-shrink-0"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                    <div>
+                      <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white mb-1">Our Location</h4>
+                      <p class="text-xs text-slate-500 dark:text-slate-400">Sunshine Wellness Clinic<br>123 Healthy Living Way, Medical District, Wellness City</p>
+                    </div>
+                  </div>
+
+                  <div class="glass-panel p-6 rounded-2xl flex items-start gap-4 border border-slate-100 dark:border-slate-800 shadow-sm hover:scale-[1.01] transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-955/60 text-secondary flex items-center justify-center flex-shrink-0"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                    <div>
+                      <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white mb-1">Phone Number</h4>
+                      <p class="text-xs text-slate-800 dark:text-slate-100 font-semibold mb-0.5">(555) 867-5309</p>
+                      <p class="text-[10px] text-slate-455 dark:text-slate-500">Call for info. After-hours transfers available for urgent issues.</p>
+                    </div>
+                  </div>
+
+                  <div class="glass-panel p-6 rounded-2xl flex items-start gap-4 border border-slate-100 dark:border-slate-800 shadow-sm hover:scale-[1.01] transition duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-955/60 text-purple-650 flex items-center justify-center flex-shrink-0"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                    <div>
+                      <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white mb-1">Email Support</h4>
+                      <p class="text-xs text-slate-800 dark:text-slate-100 font-semibold mb-0.5">info@sunshinewellness.com</p>
+                    </div>
+                  </div>
+
+                  <div class="glass-panel p-6 rounded-2xl flex items-start gap-4 border border-slate-100 dark:border-slate-800 shadow-sm bg-gradient-to-br from-white/40 to-white/10 dark:from-slate-900/40 dark:to-slate-900/10">
+                    <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-955/60 text-amber-500 dark:text-amber-400 flex items-center justify-center flex-shrink-0"><i data-lucide="clock" class="w-6 h-6"></i></div>
+                    <div class="w-full">
+                      <h4 class="font-poppins font-bold text-base text-slate-900 dark:text-white mb-2">Clinic Hours</h4>
+                      <div class="space-y-1 text-xs text-slate-600 dark:text-slate-450">
+                        <div class="flex justify-between"><span>Monday – Friday:</span><strong>9:00 AM – 7:00 PM</strong></div>
+                        <div class="flex justify-between"><span>Saturday:</span><strong>9:00 AM – 1:00 PM</strong></div>
+                        <div class="flex justify-between"><span>Sunday:</span><span class="text-rose-500 font-semibold">Closed</span></div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Clinic Location Map -->
+                <div class="lg:col-span-7 rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 shadow-lg min-h-[300px] flex flex-col bg-slate-100 dark:bg-slate-900">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.6282982823616!2d-122.08406968469145!3d37.421999979825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba02425da8f9%3A0x2cfb2d076cf4e112!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628172960000!5m2!1sen!2sus" class="w-full h-full flex-grow min-h-[320px]" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+              </div>
+
+              <!-- Contact Form -->
+              <div class="max-w-3xl mx-auto glass-panel p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm space-y-6">
+                <h4 class="font-poppins font-bold text-lg text-slate-900 dark:text-white text-center">Send an Direct Inquiry Message</h4>
+                <form onsubmit="event.preventDefault(); showToast('Message submitted! Our reception desk will email you shortly.', 'success'); this.reset();" class="space-y-4">
+                  <div class="grid sm:grid-cols-2 gap-4">
+                    <input type="text" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950 text-slate-850 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-primary text-xs">
+                    <input type="email" required placeholder="Your Email" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950 text-slate-850 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-primary text-xs">
+                  </div>
+                  <textarea required rows="4" placeholder="Your inquiry details..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-955 text-slate-850 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-primary text-xs"></textarea>
+                  <button type="submit" class="w-full py-3 bg-primary text-white rounded-xl font-bold text-xs shadow hover:scale-[1.01] transition">Send Message</button>
+                </form>
+              </div>
+
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB: APPOINTMENTS -->
+        <div id="tab-appointments" class="tab-content hidden transition-opacity duration-300">
+          <section class="py-16 relative">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+              
+              <!-- Header -->
+              <div class="text-center space-y-3">
+                <h2 class="text-xs font-bold text-primary dark:text-accent uppercase tracking-widest">Appointment Center</h2>
+                <h3 class="font-manrope font-extrabold text-3xl text-slate-900 dark:text-white">
+                  Schedule Your Patient Consultation
+                </h3>
+                <p class="text-sm text-slate-550 dark:text-slate-455">
+                  Fill out our secure HIPAA-compliant scheduling form. Your selected practitioner will confirm coverage details shortly.
+                </p>
+              </div>
+
+              <!-- Booking Form Card -->
+              <div class="glass-panel p-8 md:p-12 rounded-[2rem] shadow-xl border border-white/60 dark:border-slate-800/80 bg-white/40 dark:bg-slate-900/40">
+                <form id="booking-form" class="space-y-6">
+                  
+                  <div class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                      <label for="booking-name" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-450">Full Name *</label>
+                      <input type="text" id="booking-name" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950 text-slate-850 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                    </div>
+                    <div class="space-y-2">
+                      <label for="booking-email" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455">Email Address *</label>
+                      <input type="email" id="booking-email" required placeholder="johndoe@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-955 text-slate-850 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                    </div>
+                  </div>
+
+                  <div class="grid md:grid-cols-3 gap-6">
+                    <div class="space-y-2">
+                      <label for="booking-phone" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-450">Phone Number *</label>
+                      <input type="tel" id="booking-phone" required placeholder="(555) 000-0000" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950 text-slate-855 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                    </div>
+                    <div class="space-y-2">
+                      <label for="booking-date" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455">Preferred Date *</label>
+                      <input type="date" id="booking-date" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950 text-slate-855 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                    </div>
+                    <div class="space-y-2">
+                      <label for="booking-time" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455">Preferred Time *</label>
+                      <input type="time" id="booking-time" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950 text-slate-855 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                    </div>
+                  </div>
+
+                  <div class="grid md:grid-cols-3 gap-6">
+                    <div class="space-y-2">
+                      <label for="booking-doctor" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455">Select Doctor</label>
+                      <select id="booking-doctor" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950 text-slate-855 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                        <option value="First Available Doctor">First Available Doctor</option>
+                        <option value="Dr. Sarah Lin (Pediatrics)">Dr. Sarah Lin (Pediatrics)</option>
+                        <option value="Dr. Marcus Vance (General Medicine)">Dr. Marcus Vance (General Medicine)</option>
+                        <option value="Dr. Elena Rostova (Preventive Care)">Dr. Elena Rostova (Preventive Care)</option>
+                        <option value="Dr. Jonathan Patel (Cardiology & Internal Medicine)">Dr. Jonathan Patel (Cardiology)</option>
+                      </select>
+                    </div>
+                    <div class="space-y-2">
+                      <label for="booking-service" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455">Select Service</label>
+                      <select id="booking-service" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-955 text-slate-855 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                        <option value="General Medicine">General Medicine</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Annual Physical Exam">Annual Physical Exam</option>
+                        <option value="Vaccinations & Immunizations">Vaccinations & Immunizations</option>
+                        <option value="Laboratory Testing">Laboratory Testing</option>
+                        <option value="Preventive Care / Wellness">Preventive Care / Wellness</option>
+                      </select>
+                    </div>
+                    <div class="space-y-2">
+                      <label for="booking-insurance" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455">Insurance Provider</label>
+                      <select id="booking-insurance" class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-955 text-slate-855 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm">
+                        <option value="Self-Pay (No Insurance)">Self-Pay (No Insurance)</option>
+                        <option value="Anthem">Anthem</option>
+                        <option value="Cigna">Cigna</option>
+                        <option value="UnitedHealthcare">UnitedHealthcare</option>
+                        <option value="Aetna">Aetna</option>
+                        <option value="Blue Cross Blue Shield">Blue Cross Blue Shield</option>
+                        <option value="Medicare / Medicaid">Medicare / Medicaid</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="space-y-2">
+                    <label for="booking-notes" class="block text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-455">Additional Notes / Symptoms (Optional)</label>
+                    <textarea id="booking-notes" rows="3" placeholder="Please list any symptoms or specific information our staff should know before your arrival..." class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950 text-slate-855 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition text-sm"></textarea>
+                  </div>
+
+                  <div class="pt-2">
+                    <button type="submit" class="w-full gradient-btn-sec text-white py-4 rounded-xl font-poppins font-bold text-base shadow shadow-emerald-500/20 hover:scale-[1.01] transition">
+                      Schedule Appointment
+                    </button>
+                  </div>
+
+                </form>
+              </div>
+
+              <!-- Dynamic Appointments Board -->
+              <div id="my-appointments-section" class="mt-12 space-y-4 hidden">
+                <h4 class="font-manrope font-bold text-xl text-slate-800 dark:text-slate-200 flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> Your Scheduled Visits Dashboard
+                </h4>
+                <div id="appointments-list" class="space-y-3">
+                  <!-- Rendered dynamically -->
+                </div>
+              </div>
+
+            </div>
+          </section>
+        </div>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="bg-slate-900 dark:bg-slate-955 text-slate-400 pt-16 pb-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            
+            <div class="col-span-2 md:col-span-1 space-y-4">
+              <a href="#home" onclick="if(window.switchToTab) window.switchToTab('home'); return false;" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded-lg overflow-hidden border border-slate-700 flex items-center justify-center bg-white shadow-sm">
+                  <img src="./assets/brand_symbol-Csp8jheD.jpg" alt="Sunshine Wellness Clinic Brand Symbol" class="w-full h-full object-cover group-hover:scale-110 transition duration-300">
+                </div>
+                <span class="font-manrope font-extrabold text-lg tracking-tight text-white">Sunshine Wellness</span>
+              </a>
+              <p class="text-xs leading-relaxed text-slate-550">
+                Dedicated primary care health clinic offering medicine, pediatrics, immunizations, and round-the-clock receptionist coverage.
+              </p>
+              <div class="flex items-center gap-3 pt-2">
+                <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-primary hover:text-white flex items-center justify-center transition text-slate-400" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-primary hover:text-white flex items-center justify-center transition text-slate-400" aria-label="Twitter"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+                <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-primary hover:text-white flex items-center justify-center transition text-slate-400" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-primary hover:text-white flex items-center justify-center transition text-slate-400" aria-label="Linkedin"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h4 class="font-poppins font-bold text-sm text-white uppercase tracking-wider">Quick Links</h4>
+              <ul class="space-y-2 text-xs">
+                <li><a href="#home" onclick="if(window.switchToTab) window.switchToTab('home'); return false;" class="hover:text-primary transition">Home</a></li>
+                <li><a href="#about" onclick="if(window.switchToTab) window.switchToTab('about'); return false;" class="hover:text-primary transition">About Clinic</a></li>
+                <li><a href="#doctors" onclick="if(window.switchToTab) window.switchToTab('doctors'); return false;" class="hover:text-primary transition">Our Doctors</a></li>
+                <li><a href="#appointments" onclick="if(window.switchToTab) window.switchToTab('appointments'); return false;" class="hover:text-primary transition">Book Appointment</a></li>
+                <li><a href="#insurance" onclick="if(window.switchToTab) window.switchToTab('insurance'); return false;" class="hover:text-primary transition">Accepted Insurance</a></li>
+              </ul>
+            </div>
+
+            <div class="space-y-3">
+              <h4 class="font-poppins font-bold text-sm text-white uppercase tracking-wider">Services</h4>
+              <ul class="space-y-2 text-xs">
+                <li><a href="#services" onclick="if(window.switchToTab) window.switchToTab('services'); return false;" class="hover:text-primary transition">General Medicine</a></li>
+                <li><a href="#services" onclick="if(window.switchToTab) window.switchToTab('services'); return false;" class="hover:text-primary transition">Pediatrics</a></li>
+                <li><a href="#services" onclick="if(window.switchToTab) window.switchToTab('services'); return false;" class="hover:text-primary transition">Annual Physical Exams</a></li>
+                <li><a href="#services" onclick="if(window.switchToTab) window.switchToTab('services'); return false;" class="hover:text-primary transition">Immunizations</a></li>
+                <li><a href="#services" onclick="if(window.switchToTab) window.switchToTab('services'); return false;" class="hover:text-primary transition">Laboratory Testing</a></li>
+              </ul>
+            </div>
+
+            <div class="space-y-3 text-slate-400">
+              <h4 class="font-poppins font-bold text-sm text-white uppercase tracking-wider">Contact Info</h4>
+              <p class="text-xs leading-relaxed text-slate-550">
+                📞 (555) 867-5309<br>
+                ✉️ info@sunshinewellness.com<br>
+                📍 123 Healthy Living Way
+              </p>
+              <div class="pt-1.5">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-800 text-[10px] font-semibold text-emerald-450 uppercase tracking-wider">
+                  <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Open Mon - Sat
+                </span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-8 border-t border-slate-800 text-center flex flex-col md:flex-row justify-between text-[11px] text-slate-500 gap-4">
+            <div>&copy; 2026 Sunshine Wellness Clinic. All rights reserved.</div>
+            <div class="flex items-center justify-center gap-4">
+              <a href="#" class="hover:text-primary transition">Privacy Policy</a>
+              <span>&middot;</span>
+              <a href="#" class="hover:text-primary transition">Terms of Service</a>
+              <span>&middot;</span>
+              <a href="#" class="hover:text-primary transition">HIPAA Compliance</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- ==========================================================================
+         RIGHT COLUMN (22% width on desktop, hidden on mobile): Persistent AI Panel
+         ========================================================================== -->
+    <aside class="hidden lg:block lg:w-[22%] h-screen sticky top-0 bg-white/60 dark:bg-slate-900/60 border-l border-slate-200/50 dark:border-slate-800 shadow-2xl overflow-y-auto backdrop-blur-xl z-40 p-4 sidebar-chat-messages flex flex-col justify-between gap-4 animate-slide-in-panel">
+      
+      <!-- Panel Inner Scrollable Container -->
+      <div class="space-y-5 flex-1 pb-4 relative">
+        
+        <!-- Header -->
+        <div class="p-4 rounded-2xl bg-gradient-to-br from-primary/10 via-[#4CAFEB]/10 to-[#56CCF2]/10 border border-white/65 dark:border-slate-800 shadow-sm relative overflow-hidden flex items-start gap-3">
+          <!-- Pulse animation back-glow -->
+          <div class="absolute -right-6 -top-6 w-20 h-20 bg-sky-400/10 rounded-full blur-xl pointer-events-none"></div>
+          
+          <!-- avatar -->
+          <div id="sidebar-avatar-container" class="relative w-12 h-12 rounded-xl overflow-hidden border-2 border-primary/50 shadow flex-shrink-0 transition-all duration-300">
+            <img src="./assets/sunny_avatar-DDIf3n_A.jpg" alt="Sunny Receptionist" class="w-full h-full object-cover">
+            <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full animate-status-pulse"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1">
+              <span id="sidebar-greeting" class="font-poppins font-bold text-xs text-slate-400">Hello! 👋</span>
+            </div>
+            <h4 class="font-manrope font-extrabold text-sm text-slate-800 dark:text-white leading-tight">Sunny</h4>
+            <p class="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Sunshine AI Receptionist</p>
+            <div class="flex items-center gap-2 mt-1 text-[9px] text-slate-400 font-semibold">
+              <span class="flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Online</span>
+              <span>• Wait &lt; 5s</span>
+            </div>
+          </div>
+        </div>
+        <!-- Offline warning badge -->
+        <div id="sidebar-sheets-warning" class="hidden p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-450 text-[9px] font-bold flex items-center justify-between gap-2">
+          <span class="flex items-center gap-1">⚠️ Google Sheets sync offline. Queued locally.</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+        </div>
+
+        <!-- AI Healthcare Team Selector -->
+        <div class="space-y-2 p-3 bg-slate-100/30 dark:bg-slate-950/20 border border-slate-200/50 dark:border-slate-800/40 rounded-2xl backdrop-blur-md">
+          <div class="flex items-center justify-between px-0.5">
+            <p class="text-[10px] text-slate-500 dark:text-slate-400 font-extrabold uppercase tracking-wider flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> Neural Agent Link</p>
+            <span class="text-[7.5px] font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full flex items-center gap-1">🟢 Multi-Agent Online</span>
+          </div>
+          <!-- Horizontal circular dock -->
+          <div class="flex justify-between items-center px-0.5 select-none" id="sidebar-agent-team-list">
+            <!-- Dynamic Agent Cards injected by app.js -->
+          </div>
+          <!-- Neural Status Feed -->
+          <div class="p-2 bg-slate-100/50 dark:bg-slate-955/50 rounded-xl border border-slate-200/20 dark:border-slate-850/50 flex items-center gap-2 text-[9px]" id="active-agent-detail-bar">
+            <!-- Injected by app.js -->
+          </div>
+        </div>
+
+        <!-- Sidebar view switcher toggles -->
+        <div class="flex border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden p-1 bg-slate-100/50 dark:bg-slate-950/30">
+          <button id="sidebar-toggle-chat" class="flex-1 py-1.5 text-[9px] uppercase tracking-wider font-extrabold rounded-lg bg-white dark:bg-slate-800 text-slate-850 dark:text-white shadow-xs transition duration-200">
+            💬 Chat Desk
+          </button>
+          <button id="sidebar-toggle-analytics" class="flex-1 py-1.5 text-[9px] uppercase tracking-wider font-extrabold rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 transition duration-200">
+            📊 Live Metrics
+          </button>
+        </div>
+
+        <!-- TAB PANEL 1: CHAT DESK VIEW -->
+        <div id="sidebar-chat-panel" class="space-y-3.5 flex flex-col flex-1 min-h-0">
+          
+          <!-- Suggested Question Chips -->
+          <div class="space-y-1">
+            <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider px-1">Quick Tasks & Questions</p>
+            <div class="flex flex-wrap gap-1">
+              <button class="suggested-chip px-2.5 py-1 bg-sky-50 dark:bg-sky-955/50 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-100/50 dark:border-sky-900/50 rounded-full text-[8px] font-semibold text-sky-600 dark:text-sky-400 transition" data-question="I want to schedule an appointment">📅 Book Appointment</button>
+              <button class="suggested-chip px-2.5 py-1 bg-sky-50 dark:bg-sky-955/50 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-100/50 dark:border-sky-900/50 rounded-full text-[8px] font-semibold text-sky-600 dark:text-sky-400 transition" data-question="Start AI Health Assessment">👩‍⚕️ AI Nurse Intake</button>
+              <button class="suggested-chip px-2.5 py-1 bg-sky-50 dark:bg-sky-955/50 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-100/50 dark:border-sky-900/50 rounded-full text-[8px] font-semibold text-sky-600 dark:text-sky-400 transition" data-question="I need to reschedule my appointment">🔄 Reschedule</button>
+              <button class="suggested-chip px-2.5 py-1 bg-sky-50 dark:bg-sky-955/50 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-100/50 dark:border-sky-900/50 rounded-full text-[8px] font-semibold text-sky-600 dark:text-sky-400 transition" data-question="I want to cancel my appointment">❌ Cancel Booking</button>
+              <button class="suggested-chip px-2.5 py-1 bg-sky-50 dark:bg-sky-955/50 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-100/50 dark:border-sky-900/50 rounded-full text-[8px] font-semibold text-sky-600 dark:text-sky-400 transition" data-question="What are the clinic's open hours?">⏰ Hours</button>
+              <button class="suggested-chip px-2.5 py-1 bg-sky-50 dark:bg-sky-955/50 hover:bg-sky-100 dark:hover:bg-sky-900 border border-sky-100/50 dark:border-sky-900/50 rounded-full text-[8px] font-semibold text-sky-600 dark:text-sky-400 transition" data-question="Do you accept Anthem, Cigna, or UnitedHealthcare?">🛡️ Insurance</button>
+            </div>
+          </div>
+
+          <!-- Embedded ChatGPT-style Console -->
+          <div class="space-y-1.5 flex flex-col h-[520px] relative overflow-hidden">
+            <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider px-1" id="desktop-chat-header-title">AI Reception Desk Chat</p>
+            
+            <div class="flex-1 border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-955/50 rounded-2xl flex flex-col overflow-hidden shadow-inner relative">
+              <!-- Handoff Transition Overlay (Sidebar) -->
+              <div id="sidebar-agent-handoff" class="hidden absolute inset-0 bg-white/95 dark:bg-slate-900/95 z-40 flex flex-col items-center justify-center text-center p-4 transition-all duration-300 ease-in-out">
+                <div class="flex flex-col items-center gap-3">
+                  <div class="w-12 h-12 rounded-full border border-primary/20 dark:border-slate-800 flex items-center justify-center bg-sky-50 dark:bg-slate-955 text-xl animate-bounce" id="sidebar-handoff-avatar">🤖</div>
+                  <div class="space-y-1">
+                    <p class="text-[10px] text-slate-455 font-bold uppercase tracking-wider animate-pulse" id="sidebar-handoff-title">Connecting to AI Nurse...</p>
+                    <div class="w-20 bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mx-auto">
+                      <div class="bg-primary h-full rounded-full animate-handoff-bar" style="width: 30%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Standard Chat Desk View -->
+              <div id="sidebar-chat-box-view" class="flex-1 flex flex-col min-h-0 relative overflow-hidden">
+                <!-- Chat Mode Switcher -->
+                <div class="px-3 py-1.5 border-b border-slate-100 dark:border-slate-805 bg-slate-50/50 dark:bg-slate-900/30 flex items-center justify-between gap-2">
+                  <span class="text-[8px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-widest flex items-center gap-1">⚡ Link Mode</span>
+                  <div class="flex bg-slate-200/50 dark:bg-slate-800/80 rounded-lg p-0.5 relative border border-slate-250/20 select-none">
+                    <button id="sidebar-mode-text-btn" class="px-2.5 py-0.5 rounded text-[8px] font-extrabold transition-all duration-300 bg-white dark:bg-slate-900 text-primary shadow-xs" onclick="window.setChatMode('text')">
+                      💬 Text
+                    </button>
+                    <button id="sidebar-mode-audio-btn" class="px-2.5 py-0.5 rounded text-[8px] font-extrabold transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-primary" onclick="window.setChatMode('audio')">
+                      🔊 Audio
+                    </button>
+                  </div>
+                </div>
+                <!-- Messages Logs -->
+                <div id="sidebar-chat-messages" class="flex-1 p-3 overflow-y-auto space-y-3 sidebar-chat-messages text-xs">
+                  <!-- Messages will be injected dynamically by app.js -->
+                </div>
+
+                <!-- Dynamic Voice Status & Waveform Area -->
+                <div id="sidebar-voice-status-container" class="hidden px-3 py-2.5 bg-sky-500/10 dark:bg-sky-950/40 border-t border-slate-100 dark:border-slate-850 flex items-center justify-between gap-3 text-[10px]">
+                  <div class="flex items-center gap-1.5 font-bold">
+                    <span id="sidebar-voice-status-dot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="sidebar-voice-status-text" class="text-slate-700 dark:text-slate-300">Ready</span>
+                  </div>
+                  <div class="text-[8px] text-slate-450 dark:text-slate-455 select-none animate-pulse" id="sidebar-interrupt-hint"></div>
+                  <!-- Waveform Animation -->
+                  <div id="sidebar-voice-waveform" class="flex items-center gap-0.5 h-4 opacity-50">
+                    <span class="waveform-bar"></span>
+                    <span class="waveform-bar"></span>
+                    <span class="waveform-bar"></span>
+                    <span class="waveform-bar"></span>
+                    <span class="waveform-bar"></span>
+                    <span class="waveform-bar"></span>
+                  </div>
+                </div>
+                
+                <!-- Chat Input -->
+                <div class="p-2 border-t border-slate-100 dark:border-slate-850 bg-white dark:bg-slate-900 flex items-center gap-1.5">
+                  <input type="text" id="sidebar-chat-input" placeholder="Ask receptionist..." class="flex-1 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-955 text-[10px] focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent transition text-slate-800 dark:text-slate-100">
+                  <button id="sidebar-chat-send" class="w-7 h-7 rounded-full bg-gradient-to-r from-primary to-[#4CAFEB] hover:scale-105 transition flex items-center justify-center text-white shadow" aria-label="Send"><i data-lucide="send" class="w-3.5 h-3.5"></i></button>
+                </div>
+
+                <!-- Voice Controls Toolbar -->
+                <div class="px-2 py-1.5 border-t border-slate-100 dark:border-slate-850 bg-slate-50/80 dark:bg-slate-900/60 flex items-center justify-between gap-1">
+                  <div class="flex items-center gap-1">
+                    <!-- Start Voice Conversation / Stop Listening -->
+                    <button id="sidebar-voice-toggle-btn" class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-primary dark:text-slate-455 dark:hover:text-accent transition relative group" title="Toggle Voice Conversation" aria-label="Start Voice Conversation">
+                      <i data-lucide="mic" class="w-3.5 h-3.5 mic-icon"></i>
+                      <i data-lucide="mic-off" class="w-3.5 h-3.5 mic-off-icon hidden"></i>
+                    </button>
+                    
+                    <!-- Speaker On/Off -->
+                    <button id="sidebar-voice-speaker-btn" class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-secondary dark:text-slate-455 dark:hover:text-emerald-450 transition relative group" title="Speaker Mute/Unmute" aria-label="Speaker On/Off">
+                      <i data-lucide="volume-2" class="w-3.5 h-3.5 vol-on-icon"></i>
+                      <i data-lucide="volume-x" class="w-3.5 h-3.5 vol-off-icon hidden"></i>
+                    </button>
+
+                    <!-- Voice Settings Toggle -->
+                    <button id="sidebar-voice-settings-btn" class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-purple-500 dark:text-slate-455 dark:hover:text-purple-455 transition relative group" title="Voice Settings" aria-label="Voice Settings Panel">
+                      <i data-lucide="settings" class="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+
+                  <div class="flex items-center gap-1">
+                    <!-- Change Voice style -->
+                    <select id="sidebar-voice-style-select" class="bg-transparent text-[8px] font-bold text-slate-550 dark:text-slate-450 border border-slate-200 dark:border-slate-800 rounded px-1 py-0.5 focus:outline-none" aria-label="Select Voice style">
+                      <option value="female">Female style</option>
+                      <option value="male">Male style</option>
+                    </select>
+
+                    <!-- Language Selector -->
+                    <select id="sidebar-voice-lang-select" class="bg-transparent text-[8px] font-bold text-slate-550 dark:text-slate-450 border border-slate-200 dark:border-slate-800 rounded px-1 py-0.5 focus:outline-none" aria-label="Select Language">
+                      <option value="en-US">English</option>
+                      <option value="ta-IN">Tamil</option>
+                      <option value="hi-IN">Hindi</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Voice Settings Drawer -->
+                <div id="sidebar-voice-drawer" class="absolute bottom-0 left-0 right-0 transform translate-y-full transition-transform duration-300 ease-in-out bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-850 p-4 rounded-t-2xl z-50 text-[10px] space-y-3.5 shadow-2xl">
+                  <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <span class="font-poppins font-bold text-slate-800 dark:text-white uppercase tracking-wider">Voice Config</span>
+                    <button id="sidebar-voice-drawer-close" class="text-slate-400 hover:text-slate-600 font-bold text-sm" aria-label="Close Settings Drawer">&times;</button>
+                  </div>
+                  
+                  <!-- Speech Speed -->
+                  <div class="space-y-1">
+                    <div class="flex justify-between font-semibold text-slate-550">
+                      <span>Speech Speed:</span>
+                      <span id="sidebar-speed-val">1.0x (Normal)</span>
+                    </div>
+                    <input type="range" id="sidebar-speed-slider" min="0.7" max="1.6" step="0.1" value="1.0" class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary">
+                  </div>
+
+                  <!-- Response Mode -->
+                  <div class="flex justify-between items-center font-semibold text-slate-550">
+                    <span>Response Mode:</span>
+                    <select id="sidebar-response-mode-select" class="bg-transparent border border-slate-200 dark:border-slate-855 rounded px-1 py-0.5 text-[9px] font-bold">
+                      <option value="both">Voice + Text</option>
+                      <option value="voice">Voice Only</option>
+                      <option value="text">Text Only</option>
+                    </select>
+                  </div>
+
+                  <!-- Auto Send After Speech -->
+                  <div class="flex justify-between items-center font-semibold text-slate-550">
+                    <span>Auto Send After Speech:</span>
+                    <input type="checkbox" id="sidebar-auto-send-toggle" checked class="w-3.5 h-3.5 accent-secondary">
+                  </div>
+
+                  <!-- Noise Suppression -->
+                  <div class="flex justify-between items-center font-semibold text-slate-550">
+                    <span>Noise Suppression (STT):</span>
+                    <input type="checkbox" id="sidebar-noise-toggle" checked class="w-3.5 h-3.5 accent-primary">
+                  </div>
+
+                  <!-- Echo Cancellation -->
+                  <div class="flex justify-between items-center font-semibold text-slate-550">
+                    <span>Echo Cancellation:</span>
+                    <input type="checkbox" id="sidebar-echo-toggle" checked class="w-3.5 h-3.5 accent-primary">
+                  </div>
+                </div>
+              </div><!-- End sidebar-chat-box-view -->
+
+              <!-- AI Nurse Intake Wizard View (Sidebar) -->
+              <div id="sidebar-nurse-wizard-view" class="hidden absolute inset-0 bg-white dark:bg-slate-900 z-30 flex flex-col justify-between overflow-hidden">
+                <!-- Wizard Header -->
+                <div class="p-3 bg-gradient-to-br from-primary/10 via-[#4CAFEB]/10 to-[#56CCF2]/10 border-b border-slate-100 dark:border-slate-805 flex items-center justify-between gap-2">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-full overflow-hidden border border-primary/50 shadow flex-shrink-0 avatar-breathing relative">
+                      <span class="w-full h-full bg-sky-100 flex items-center justify-center text-sm">👩‍⚕️</span>
+                    </div>
+                    <div>
+                      <h5 class="text-[10px] font-black text-slate-800 dark:text-white leading-tight">Sunshine AI Nurse</h5>
+                      <p class="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Health Intake Screen</p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <span id="sidebar-nurse-step-lbl" class="text-[8px] font-bold text-primary dark:text-accent bg-sky-50 dark:bg-slate-800 px-2 py-0.5 rounded-full">Step 1 of 6</span>
+                  </div>
+                </div>
+
+                <!-- Progress bar -->
+                <div class="w-full bg-slate-100 dark:bg-slate-800 h-1">
+                  <div id="sidebar-nurse-progress-bar" class="bg-primary h-full transition-all duration-300" style="width: 16%"></div>
+                </div>
+
+                <!-- Question/Wizard Body -->
+                <div id="sidebar-nurse-wizard-body" class="flex-1 p-3 overflow-y-auto text-[11px] space-y-3.5 sidebar-chat-messages">
+                  <!-- Injected dynamically in app.js -->
+                </div>
+
+                <!-- Wizard Footer Controls -->
+                <div class="p-2 border-t border-slate-100 dark:border-slate-850 bg-slate-50/80 dark:bg-slate-900/60 flex items-center justify-between gap-2">
+                  <button id="sidebar-nurse-btn-back" class="px-3 py-1 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-150 dark:hover:bg-slate-800 text-[9px] font-bold text-slate-550 transition">
+                    ← Back
+                  </button>
+                  <button id="sidebar-nurse-btn-next" class="px-4 py-1.5 rounded-lg bg-gradient-to-r from-primary to-[#4CAFEB] hover:scale-103 transition text-white text-[9px] font-black shadow flex items-center gap-1">
+                    Next →
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- End sidebar-chat-panel -->
+
+        <!-- TAB PANEL 2: LIVE ANALYTICS VIEW -->
+        <div id="sidebar-analytics-panel" class="hidden space-y-4 animate-slide-in-panel">
+          <!-- Live Metrics Grid -->
+          <div class="grid grid-cols-1 gap-2.5">
+            
+            <!-- AI Status Card -->
+            <div class="glass-panel p-3 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-500 text-sm">🤖</div>
+                <div>
+                  <h5 class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">AI Status</h5>
+                  <p class="text-xs font-black text-slate-800 dark:text-white leading-tight">🟢 Online</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <span class="text-[9px] font-bold block text-slate-800 dark:text-white">24/7 Availability</span>
+                <span class="text-[7px] text-slate-450 dark:text-slate-500 block">Response: Just Now</span>
+              </div>
+            </div>
+
+            <!-- Average Response Time Card -->
+            <div class="glass-panel p-3 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-sky-500/10 dark:bg-sky-500/20 flex items-center justify-center text-primary text-sm">⚡</div>
+                <div>
+                  <h5 class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Avg Response Time</h5>
+                  <p class="sidebar-metric-val text-xs font-black text-slate-800 dark:text-white leading-tight" data-metric-key="avgResponseTime" data-target="2.3" data-suffix="s">0s</p>
+                </div>
+              </div>
+              <span class="text-[8px] font-bold text-emerald-500">↑ 12% Faster</span>
+            </div>
+
+            <!-- Appointments Today -->
+            <div class="glass-panel p-3 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs flex items-center justify-between relative overflow-hidden" id="dash-card-appt">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-secondary text-sm">📅</div>
+                <div>
+                  <h5 class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Appointments Today</h5>
+                  <p class="text-[8px] text-slate-450">Today's Bookings</p>
+                </div>
+              </div>
+              <span class="dash-metric-val sidebar-metric-val font-manrope font-black text-base text-slate-800 dark:text-white" id="dash-appt-count" data-metric-key="appointmentsToday" data-target="18">0</span>
+            </div>
+
+            <!-- Wait Time Card -->
+            <div class="glass-panel p-3 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 dark:bg-amber-500/20 flex items-center justify-center text-amber-500 text-sm">⏳</div>
+                <div>
+                  <h5 class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Estimated Wait Time</h5>
+                  <p class="sidebar-metric-val text-xs font-black text-slate-800 dark:text-white leading-tight" id="dash-wait-text" data-metric-key="averageWait" data-target="12" data-suffix=" Minutes">0 Minutes</p>
+                </div>
+              </div>
+              <span class="text-[8px] font-bold text-emerald-500 px-2 py-0.5 rounded-full bg-emerald-100/50 dark:bg-emerald-950/20" id="dash-wait-level">Low</span>
+            </div>
+
+            <!-- Doctors Available Card -->
+            <div class="glass-panel p-3 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-sky-500/10 dark:bg-sky-500/20 flex items-center justify-center text-primary text-sm">👨‍⚕️</div>
+                <div>
+                  <h5 class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Doctors Available</h5>
+                  <p class="sidebar-metric-val text-xs font-black text-slate-800 dark:text-white leading-tight" data-metric-key="doctorsAvailable" data-target="4">0</p>
+                </div>
+              </div>
+              <span class="text-[8px] font-bold text-slate-455">Available Now</span>
+            </div>
+
+            <!-- AI Conversations Card -->
+            <div class="glass-panel p-3 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-purple-500/10 dark:bg-purple-500/20 flex items-center justify-center text-purple-500 text-sm">💬</div>
+                <div>
+                  <h5 class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">AI Conversations</h5>
+                  <p class="sidebar-metric-val text-xs font-black text-slate-800 dark:text-white" id="dash-conv-count" data-metric-key="conversationsToday" data-target="156">0</p>
+                </div>
+              </div>
+              <span class="text-[8px] font-bold text-slate-450">Today's Chats</span>
+            </div>
+
+            <!-- Patient Satisfaction Card -->
+            <div class="glass-panel p-3 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/10 dark:bg-amber-500/20 flex items-center justify-center text-amber-500 text-sm">⭐</div>
+                <div>
+                  <h5 class="text-[9px] text-slate-400 font-bold uppercase tracking-wider">Patient Satisfaction</h5>
+                  <p class="sidebar-metric-val text-xs font-black text-slate-800 dark:text-white" data-metric-key="satisfactionRate" data-target="99" data-suffix="%">0%</p>
+                </div>
+              </div>
+              <span class="text-[9px] text-amber-500 select-none">★★★★★</span>
+            </div>
+          </div>
+
+          <!-- Agent Collaboration Panel -->
+          <div class="space-y-2 border-t border-slate-150 dark:border-slate-800 pt-3">
+            <h5 class="text-[9px] font-bold uppercase tracking-wider text-slate-850 dark:text-slate-300 flex items-center gap-1">
+              🤝 Agent Collaboration Panel
+            </h5>
+            <div class="glass-panel p-2.5 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs text-[9px] space-y-1.5 leading-normal">
+              <div class="flex justify-between">
+                <span class="text-slate-400 font-bold uppercase tracking-wider text-[8px]">Active Agent:</span>
+                <span id="collab-active-agent" class="font-extrabold text-primary">Receptionist 🤖</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400 font-bold uppercase tracking-wider text-[8px]">Working On:</span>
+                <span id="collab-working-on" class="font-semibold text-slate-700 dark:text-slate-300">Greeting & Routing Patients</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400 font-bold uppercase tracking-wider text-[8px]">Next Agent:</span>
+                <span id="collab-next-agent" class="font-semibold text-slate-500">None Scheduled</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400 font-bold uppercase tracking-wider text-[8px]">Status:</span>
+                <span id="collab-status" class="font-bold text-emerald-500 flex items-center gap-1">🟢 Waiting for Patient</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AI Collaboration Timeline -->
+          <div class="space-y-2 border-t border-slate-150 dark:border-slate-800 pt-3">
+            <h5 class="text-[9px] font-bold uppercase tracking-wider text-slate-850 dark:text-slate-300 flex items-center gap-1">
+              📈 AI Collaboration Timeline
+            </h5>
+            <div class="glass-panel p-3 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs text-[9px] space-y-3 relative overflow-hidden">
+              <div class="absolute left-4 top-4 bottom-4 w-[1px] bg-slate-200 dark:bg-slate-800" style="left: 17px;"></div>
+              
+              <!-- Stage 1 -->
+              <div class="flex items-start gap-2.5 relative" id="timeline-stage-reception">
+                <span class="w-2.5 h-2.5 rounded-full border-2 border-emerald-500 bg-emerald-500 shadow-sm flex-shrink-0 z-10" id="stage-dot-reception"></span>
+                <div>
+                  <div class="font-extrabold text-slate-800 dark:text-white leading-tight">Receptionist Welcome</div>
+                  <p class="text-[7.5px] text-emerald-500 font-bold uppercase tracking-wider animate-pulse" id="stage-status-reception">Completed</p>
+                </div>
+              </div>
+
+              <!-- Stage 2 -->
+              <div class="flex items-start gap-2.5 relative" id="timeline-stage-nurse">
+                <span class="w-2.5 h-2.5 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm flex-shrink-0 z-10" id="stage-dot-nurse"></span>
+                <div>
+                  <div class="font-extrabold text-slate-800 dark:text-white leading-tight">Nurse Assessment</div>
+                  <p class="text-[7.5px] text-slate-400 font-bold uppercase tracking-wider" id="stage-status-nurse">Pending</p>
+                </div>
+              </div>
+
+              <!-- Stage 3 -->
+              <div class="flex items-start gap-2.5 relative" id="timeline-stage-doctor">
+                <span class="w-2.5 h-2.5 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm flex-shrink-0 z-10" id="stage-dot-doctor"></span>
+                <div>
+                  <div class="font-extrabold text-slate-800 dark:text-white leading-tight">Doctor Summary</div>
+                  <p class="text-[7.5px] text-slate-400 font-bold uppercase tracking-wider" id="stage-status-doctor">Pending</p>
+                </div>
+              </div>
+
+              <!-- Stage 4 -->
+              <div class="flex items-start gap-2.5 relative" id="timeline-stage-insurance">
+                <span class="w-2.5 h-2.5 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm flex-shrink-0 z-10" id="stage-dot-insurance"></span>
+                <div>
+                  <div class="font-extrabold text-slate-800 dark:text-white leading-tight">Insurance Verified</div>
+                  <p class="text-[7.5px] text-slate-400 font-bold uppercase tracking-wider" id="stage-status-insurance">Pending</p>
+                </div>
+              </div>
+
+              <!-- Stage 5 -->
+              <div class="flex items-start gap-2.5 relative" id="timeline-stage-booked">
+                <span class="w-2.5 h-2.5 rounded-full border-2 border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-sm flex-shrink-0 z-10" id="stage-dot-booked"></span>
+                <div>
+                  <div class="font-extrabold text-slate-800 dark:text-white leading-tight">Appointment Booked</div>
+                  <p class="text-[7.5px] text-slate-400 font-bold uppercase tracking-wider" id="stage-status-booked">Pending</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Activity Feed -->
+          <div class="space-y-2 border-t border-slate-150 dark:border-slate-800 pt-3">
+            <h5 class="text-[9px] font-bold uppercase tracking-wider text-slate-850 dark:text-slate-300 flex items-center gap-1">
+              ⚡ Platform Activity Feed
+            </h5>
+            <div class="glass-panel p-2.5 rounded-2xl border border-white/60 dark:border-slate-800/80 shadow-2xs text-[8px] space-y-1.5 h-24 overflow-y-auto sidebar-chat-messages" id="platform-activity-feed-list">
+              <!-- Timestamped feed items injected by app.js -->
+            </div>
+          </div>
+
+          <!-- Recent Appointments Widget -->
+          <div class="space-y-2">
+            <div class="flex justify-between items-center px-1">
+              <h5 class="text-[9px] font-bold uppercase tracking-wider text-slate-850 dark:text-slate-300 flex items-center gap-1">
+                📋 Recent Bookings
+              </h5>
+              <button onclick="if(window.switchToTab) window.switchToTab('appointments');" class="text-[8px] font-bold text-primary hover:underline uppercase tracking-wider">View All</button>
+            </div>
+            
+            <div class="glass-panel rounded-2xl border border-white/60 dark:border-slate-800/80 overflow-hidden shadow-2xs">
+              <table class="w-full text-left text-[9px] border-collapse">
+                <thead>
+                  <tr class="bg-slate-50 dark:bg-slate-955/40 text-slate-500 font-semibold border-b border-slate-100 dark:border-slate-850">
+                    <th class="p-2">Patient</th>
+                    <th class="p-2">Details</th>
+                    <th class="p-2 text-right">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="dash-recent-list">
+                  <!-- Injected in app.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Doctor Availability Widget (Moved here to clean up Chat Desk) -->
+          <div class="space-y-2 border-t border-slate-150 dark:border-slate-800 pt-3">
+            <p class="text-[9px] text-slate-400 font-bold uppercase tracking-wider px-1">Doctor On-Call Availability</p>
+            <div class="space-y-1.5">
+              <!-- Doc 1 -->
+              <div class="glass-panel p-2.5 rounded-xl border border-white/50 dark:border-slate-800/80 shadow-2xs flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200 shadow-xs">
+                    <img src="./assets/dr_marcus_vance-6ykbGNVd.jpg" alt="Dr. Carter" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <h5 class="text-[10px] font-bold text-slate-900 dark:text-white leading-tight">Dr. Emily Carter</h5>
+                    <p class="text-[8px] text-slate-400">General Medicine</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="inline-flex items-center gap-1 text-[8px] font-bold text-emerald-600 bg-emerald-50 dark:bg-emerald-950/20 px-2 py-0.5 rounded-full">
+                    <span class="w-1 h-1 bg-emerald-500 rounded-full animate-ping"></span> Available
+                  </span>
+                  <button onclick="if(window.bookDoctor) window.bookDoctor('Dr. Marcus Vance');" class="block text-[8px] font-bold text-primary dark:text-accent hover:underline mt-1">Book 3:00 PM</button>
+                </div>
+              </div>
+              <!-- Doc 2 -->
+              <div class="glass-panel p-2.5 rounded-xl border border-white/50 dark:border-slate-800/80 shadow-2xs flex items-center justify-between gap-2">
+                <div class="flex items-center gap-2">
+                  <div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200 shadow-xs">
+                    <img src="./assets/dr_sarah_lin-8eJQcVdA.jpg" alt="Dr. Chen" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <h5 class="text-[10px] font-bold text-slate-900 dark:text-white leading-tight">Dr. Michael Chen</h5>
+                    <p class="text-[8px] text-slate-400">Pediatrics Care</p>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <span class="inline-flex items-center gap-1 text-[8px] font-bold text-amber-600 bg-amber-50 dark:bg-amber-955/20 px-2 py-0.5 rounded-full">
+                    <span class="w-1 h-1 bg-amber-500 rounded-full animate-pulse"></span> Busy
+                  </span>
+                  <span class="block text-[7px] text-slate-455 dark:text-slate-500 mt-1">Tomorrow 10AM</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clinic Info Widget (Moved here to clean up Chat Desk) -->
+          <div class="glass-panel p-3 rounded-xl border border-white/50 dark:border-slate-800/80 shadow-2xs space-y-2">
+            <h5 class="text-[10px] font-bold text-slate-900 dark:text-white flex items-center gap-1 border-b border-slate-100 dark:border-slate-800 pb-1.5">
+              <i data-lucide="info" class="w-3.5 h-3.5 text-primary"></i> Clinic Information
+            </h5>
+            <div class="space-y-1.5 text-[9px] text-slate-500 dark:text-slate-400 leading-normal">
+              <div>⏰ <strong>Hours:</strong> Mon-Fri 9AM-7PM, Sat 9AM-1PM</div>
+              <div>🏥 <strong>Emergency:</strong> On-call physician available after hours</div>
+              <div>🛡️ <strong>Accepted Insurer:</strong> Anthem, Cigna, UnitedHealthcare, most major providers</div>
+            </div>
+          </div>
+
+          <!-- Bottom Auto Update Info -->
+          <div class="flex items-center justify-between px-1 text-[8px] text-slate-450 dark:text-slate-550 select-none pt-1">
+            <span class="flex items-center gap-1">
+              <span id="dash-refresh-spinner" class="w-2 h-2 border border-slate-400 border-t-transparent rounded-full"></span>
+              Auto-updating every 45s
+            </span>
+            <button id="dash-manual-refresh" class="hover:text-primary transition font-bold">Refresh Now 🔄</button>
+          </div>
+
+        </div><!-- End sidebar-analytics-panel -->
+
+      </div>
+
+      <!-- Theme Switcher & Copyright inside sidebar bottom -->
+      <div class="border-t border-slate-100 dark:border-slate-800/80 pt-2 flex items-center justify-between text-[8px] text-slate-400">
+        <span>© 2026 Sunshine Wellness</span>
+        <span>Secure HIPAA Console</span>
+      </div>
+
+    </aside>
+
+  </div>
+
+  <!-- ==========================================================================
+       MOBILE ONLY FLOATING CHAT WIDGET
+       ========================================================================== -->
+  <div class="fixed bottom-6 right-6 lg:hidden z-50 flex flex-col items-end">
+    
+    <!-- Chat Window Container -->
+    <div id="chatbot-window" class="hidden w-[360px] h-[540px] rounded-[1.8rem] border border-white/60 dark:border-slate-800/80 shadow-2xl bg-white/95 dark:bg-slate-900/95 flex-col overflow-hidden transition-all duration-300 mb-4 backdrop-blur-xl relative">
+      <!-- Handoff Transition Overlay (Mobile) -->
+      <div id="mobile-agent-handoff" class="hidden absolute inset-0 bg-white/95 dark:bg-slate-900/95 z-40 flex flex-col items-center justify-center text-center p-4 transition-all duration-300 ease-in-out">
+        <div class="flex flex-col items-center gap-3">
+          <div class="w-12 h-12 rounded-full border border-primary/20 dark:border-slate-800 flex items-center justify-center bg-sky-50 dark:bg-slate-955 text-xl animate-bounce" id="mobile-handoff-avatar">🤖</div>
+          <div class="space-y-1">
+            <p class="text-[10px] text-slate-455 font-bold uppercase tracking-wider animate-pulse" id="mobile-handoff-title">Connecting to AI Nurse...</p>
+            <div class="w-20 bg-slate-100 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden mx-auto">
+              <div class="bg-primary h-full rounded-full animate-handoff-bar" style="width: 30%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Chat Header -->
+      <div class="p-5 bg-gradient-to-r from-primary via-[#4CAFEB] to-[#56CCF2] dark:from-slate-800 dark:to-slate-900 text-white flex items-center justify-between shadow">
+        <div class="flex items-center gap-3">
+          <div id="mobile-avatar-container" class="relative w-10 h-10 rounded-xl overflow-hidden border border-white/20 shadow transition-all duration-300">
+            <img src="./assets/sunny_avatar-DDIf3n_A.jpg" alt="Sunny AI Receptionist" class="w-full h-full object-cover">
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-primary rounded-full"></span>
+          </div>
+          <div>
+            <h4 class="font-poppins font-bold text-sm leading-tight text-white flex items-center gap-1.5">Sunny</h4>
+            <p class="text-[10px] text-white/80 font-medium">AI Receptionist • Online</p>
+          </div>
+        </div>
+        <button id="chatbot-close" class="p-1 rounded-lg hover:bg-white/10 text-white/90 hover:text-white transition" aria-label="Close"><i data-lucide="x" class="w-5 h-5"></i></button>
+      </div>
+
+      <!-- Offline warning badge (Mobile) -->
+      <div id="mobile-sheets-warning" class="hidden p-2.5 bg-amber-500/10 border-b border-amber-500/20 text-amber-600 dark:text-amber-450 text-[9px] font-bold flex items-center justify-between gap-2">
+        <span class="flex items-center gap-1">⚠️ Google Sheets sync offline. Queued locally.</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+      </div>
+
+      <!-- Mobile AI Healthcare Team Selector -->
+      <div class="px-4 py-2 bg-slate-50/50 dark:bg-slate-905/30 border-b border-slate-100 dark:border-slate-805 flex flex-col gap-2">
+        <div class="flex items-center justify-between">
+          <p class="text-[10px] text-slate-500 dark:text-slate-450 font-black uppercase tracking-wider">👥 Neural Agent Link</p>
+          <span class="text-[7.5px] font-bold text-emerald-500 bg-emerald-500/10 border border-emerald-500/20 px-1.5 py-0.5 rounded-full flex items-center gap-1">🟢 Online</span>
+        </div>
+        <div class="flex justify-between items-center" id="mobile-agent-team-list">
+          <!-- Dynamic Agent Nodes injected by app.js -->
+        </div>
+        <div class="p-2 bg-white/80 dark:bg-slate-950/80 rounded-xl border border-slate-150 dark:border-slate-850 flex items-center gap-2 text-[9px] leading-tight" id="mobile-active-agent-detail-bar">
+          <!-- Dynamic Active Agent details -->
+        </div>
+      </div>
+
+      <!-- Standard Mobile Chat Box View -->
+      <div id="mobile-chat-box-view" class="flex-grow flex flex-col min-h-0 relative overflow-hidden">
+        <!-- Mobile Chat Mode Switcher -->
+        <div class="px-4 py-1.5 border-b border-slate-100 dark:border-slate-805 bg-slate-50/50 dark:bg-slate-900/30 flex items-center justify-between gap-2">
+          <span class="text-[8px] font-bold text-slate-400 dark:text-slate-550 uppercase tracking-widest flex items-center gap-1">⚡ Link Mode</span>
+          <div class="flex bg-slate-200/50 dark:bg-slate-800/80 rounded-lg p-0.5 relative border border-slate-250/20 select-none">
+            <button id="mobile-mode-text-btn" class="px-2.5 py-0.5 rounded text-[8px] font-extrabold transition-all duration-300 bg-white dark:bg-slate-900 text-primary shadow-xs" onclick="window.setChatMode('text')">
+              💬 Text
+            </button>
+            <button id="mobile-mode-audio-btn" class="px-2.5 py-0.5 rounded text-[8px] font-extrabold transition-all duration-300 text-slate-500 dark:text-slate-400 hover:text-primary" onclick="window.setChatMode('audio')">
+              🔊 Audio
+            </button>
+          </div>
+        </div>
+        <!-- Messages -->
+        <div id="chatbot-messages" class="flex-1 p-5 overflow-y-auto space-y-4 bg-slate-50/40 dark:bg-slate-950/20">
+          <!-- Messages will be injected dynamically by app.js -->
+        </div>
+
+      <!-- Dynamic Voice Status & Waveform Area (Mobile) -->
+      <div id="mobile-voice-status-container" class="hidden px-4 py-2 bg-sky-500/10 dark:bg-sky-950/40 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3 text-[10px]">
+        <div class="flex items-center gap-1.5 font-bold">
+          <span id="mobile-voice-status-dot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span id="mobile-voice-status-text" class="text-slate-700 dark:text-slate-300">Ready</span>
+        </div>
+        <div class="text-[8px] text-slate-450 dark:text-slate-455 select-none animate-pulse" id="mobile-interrupt-hint"></div>
+        <!-- Waveform Animation -->
+        <div id="mobile-voice-waveform" class="flex items-center gap-0.5 h-4 opacity-50">
+          <span class="waveform-bar"></span>
+          <span class="waveform-bar"></span>
+          <span class="waveform-bar"></span>
+          <span class="waveform-bar"></span>
+          <span class="waveform-bar"></span>
+          <span class="waveform-bar"></span>
+        </div>
+      </div>
+
+      <!-- Quick Replies -->
+      <div id="chatbot-quick-replies" class="px-4 py-2 border-t border-slate-100 dark:border-slate-800 flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-none scroll-smooth">
+        <button class="quick-reply-btn text-xs font-semibold px-3.5 py-2 bg-primary/10 text-primary border border-primary/20 rounded-full hover:bg-primary/20 transition flex-shrink-0" data-reply="Start AI Health Assessment">👩‍⚕️ Start AI Assessment</button>
+        <button class="quick-reply-btn text-xs font-semibold px-3.5 py-2 bg-sky-50 dark:bg-sky-955/50 text-sky-600 dark:text-sky-400 border border-sky-100/50 dark:border-sky-900/50 rounded-full hover:bg-sky-100 dark:hover:bg-sky-900 transition flex-shrink-0" data-reply="Book Appointment">📅 Book Appointment</button>
+        <button class="quick-reply-btn text-xs font-semibold px-3.5 py-2 bg-sky-50 dark:bg-sky-955/50 text-sky-600 dark:text-sky-400 border border-sky-100/50 dark:border-sky-900/50 rounded-full hover:bg-sky-100 dark:hover:bg-sky-900 transition flex-shrink-0" data-reply="Clinic Hours">⏰ Clinic Hours</button>
+        <button class="quick-reply-btn text-xs font-semibold px-3.5 py-2 bg-sky-50 dark:bg-sky-955/50 text-sky-600 dark:text-sky-400 border border-sky-100/50 dark:border-sky-900/50 rounded-full hover:bg-sky-100 dark:hover:bg-sky-900 transition flex-shrink-0" data-reply="Our Doctors">🩺 Our Doctors</button>
+        <button class="quick-reply-btn text-xs font-semibold px-3.5 py-2 bg-sky-50 dark:bg-sky-955/50 text-sky-600 dark:text-sky-400 border border-sky-100/50 dark:border-sky-900/50 rounded-full hover:bg-sky-100 dark:hover:bg-sky-900 transition flex-shrink-0" data-reply="Services">💊 Services</button>
+        <button class="quick-reply-btn text-xs font-semibold px-3.5 py-2 bg-sky-50 dark:bg-sky-955/50 text-sky-600 dark:text-sky-400 border border-sky-100/50 dark:border-sky-900/50 rounded-full hover:bg-sky-100 dark:hover:bg-sky-900 transition flex-shrink-0" data-reply="Insurance">🛡️ Insurance</button>
+        <button class="quick-reply-btn text-xs font-semibold px-3.5 py-2 bg-sky-50 dark:bg-sky-955/50 text-sky-600 dark:text-sky-400 border border-sky-100/50 dark:border-sky-900/50 rounded-full hover:bg-sky-100 dark:hover:bg-sky-900 transition flex-shrink-0" data-reply="Billing">💳 Billing</button>
+        <button class="quick-reply-btn text-xs font-semibold px-3.5 py-2 bg-sky-50 dark:bg-sky-955/50 text-sky-600 dark:text-sky-400 border border-sky-100/50 dark:border-sky-900/50 rounded-full hover:bg-sky-100 dark:hover:bg-sky-900 transition flex-shrink-0" data-reply="Contact Clinic">📞 Contact</button>
+      </div>
+
+      <!-- Input -->
+      <div class="p-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center gap-2">
+        <input type="text" id="chatbot-input" placeholder="Type a message..." class="flex-1 px-4 py-2.5 rounded-full border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 text-xs text-slate-855 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent transition">
+        <button id="chatbot-send" class="w-9 h-9 rounded-full bg-gradient-to-r from-primary to-[#4CAFEB] hover:scale-105 transition flex items-center justify-center text-white shadow-sm" aria-label="Send"><i data-lucide="send" class="w-4.5 h-4.5"></i></button>
+      </div>
+
+      <!-- Voice Controls Toolbar (Mobile) -->
+      <div class="px-4 py-2 border-t border-slate-100 dark:border-slate-805 bg-slate-50/80 dark:bg-slate-900/60 flex items-center justify-between gap-1.5">
+        <div class="flex items-center gap-1.5">
+          <button id="mobile-voice-toggle-btn" class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-primary dark:text-slate-400 dark:hover:text-accent transition relative" title="Toggle Voice Conversation" aria-label="Start Voice Conversation">
+            <i data-lucide="mic" class="w-4 h-4 mic-icon"></i>
+            <i data-lucide="mic-off" class="w-4 h-4 mic-off-icon hidden"></i>
+          </button>
+          
+          <button id="mobile-voice-speaker-btn" class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-secondary dark:text-slate-400 dark:hover:text-emerald-450 transition relative" title="Speaker Mute/Unmute" aria-label="Speaker On/Off">
+            <i data-lucide="volume-2" class="w-4 h-4 vol-on-icon"></i>
+            <i data-lucide="volume-x" class="w-4 h-4 vol-off-icon hidden"></i>
+          </button>
+
+          <button id="mobile-voice-settings-btn" class="p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 hover:text-purple-500 dark:text-slate-400 dark:hover:text-purple-450 transition relative" title="Voice Settings" aria-label="Voice Settings Panel">
+            <i data-lucide="settings" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <select id="mobile-voice-style-select" class="bg-transparent text-[8px] font-bold text-slate-550 dark:text-slate-450 border border-slate-200 dark:border-slate-800 rounded px-1 py-0.5 focus:outline-none" aria-label="Select Voice style">
+            <option value="female">Female style</option>
+            <option value="male">Male style</option>
+          </select>
+
+          <select id="mobile-voice-lang-select" class="bg-transparent text-[8px] font-bold text-slate-550 dark:text-slate-450 border border-slate-200 dark:border-slate-800 rounded px-1 py-0.5 focus:outline-none" aria-label="Select Language">
+            <option value="en-US">English</option>
+            <option value="ta-IN">Tamil</option>
+            <option value="hi-IN">Hindi</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Voice Settings Drawer (Mobile) -->
+      <div id="mobile-voice-drawer" class="absolute bottom-0 left-0 right-0 transform translate-y-full transition-transform duration-300 ease-in-out bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 rounded-t-2xl z-50 text-[10px] space-y-3.5 shadow-2xl">
+        <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+          <span class="font-poppins font-bold text-slate-800 dark:text-white uppercase tracking-wider">Voice Config</span>
+          <button id="mobile-voice-drawer-close" class="text-slate-400 hover:text-slate-600 font-bold text-sm" aria-label="Close Settings Drawer">&times;</button>
+        </div>
+        
+        <div class="space-y-1">
+          <div class="flex justify-between font-semibold text-slate-550">
+            <span>Speech Speed:</span>
+            <span id="mobile-speed-val">1.0x (Normal)</span>
+          </div>
+          <input type="range" id="mobile-speed-slider" min="0.7" max="1.6" step="0.1" value="1.0" class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-primary">
+        </div>
+
+        <div class="flex justify-between items-center font-semibold text-slate-550">
+          <span>Response Mode:</span>
+          <select id="mobile-response-mode-select" class="bg-transparent border border-slate-200 dark:border-slate-800 rounded px-1 py-0.5 text-[9px] font-bold">
+            <option value="both">Voice + Text</option>
+            <option value="voice">Voice Only</option>
+            <option value="text">Text Only</option>
+          </select>
+        </div>
+
+        <div class="flex justify-between items-center font-semibold text-slate-550">
+          <span>Auto Send After Speech:</span>
+          <input type="checkbox" id="mobile-auto-send-toggle" checked class="w-3.5 h-3.5 accent-secondary">
+        </div>
+
+        <div class="flex justify-between items-center font-semibold text-slate-550">
+          <span>Noise Suppression (STT):</span>
+          <input type="checkbox" id="mobile-noise-toggle" checked class="w-3.5 h-3.5 accent-primary">
+        </div>
+
+        <div class="flex justify-between items-center font-semibold text-slate-550">
+          <span>Echo Cancellation:</span>
+          <input type="checkbox" id="mobile-echo-toggle" checked class="w-3.5 h-3.5 accent-primary">
+        </div>
+      </div>
+
+      </div><!-- End mobile-chat-box-view -->
+
+      <!-- AI Nurse Intake Wizard View (Mobile) -->
+      <div id="mobile-nurse-wizard-view" class="hidden absolute inset-x-0 bottom-0 top-[60px] bg-white dark:bg-slate-900 z-30 flex flex-col justify-between overflow-hidden">
+        <!-- Wizard Header -->
+        <div class="p-3 bg-gradient-to-br from-primary/10 via-[#4CAFEB]/10 to-[#56CCF2]/10 border-b border-slate-100 dark:border-slate-805 flex items-center justify-between gap-2.5">
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full overflow-hidden border border-primary/50 shadow flex-shrink-0 avatar-breathing relative">
+              <span class="w-full h-full bg-sky-100 flex items-center justify-center text-sm">👩‍⚕️</span>
+            </div>
+            <div>
+              <h5 class="text-[10px] font-black text-slate-800 dark:text-white leading-tight">Sunshine AI Nurse</h5>
+              <p class="text-[8px] text-slate-400 font-bold uppercase tracking-wider">Health Intake Screen</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <span id="mobile-nurse-step-lbl" class="text-[8px] font-bold text-primary dark:text-accent bg-sky-50 dark:bg-slate-800 px-2 py-0.5 rounded-full">Step 1 of 6</span>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="w-full bg-slate-100 dark:bg-slate-800 h-1">
+          <div id="mobile-nurse-progress-bar" class="bg-primary h-full transition-all duration-300" style="width: 16%"></div>
+        </div>
+
+        <!-- Question/Wizard Body -->
+        <div id="mobile-nurse-wizard-body" class="flex-1 p-4 overflow-y-auto text-[11px] space-y-3.5 sidebar-chat-messages">
+          <!-- Injected dynamically in app.js -->
+        </div>
+
+        <!-- Wizard Footer Controls -->
+        <div class="p-3 border-t border-slate-100 dark:border-slate-850 bg-slate-50/80 dark:bg-slate-900/60 flex items-center justify-between gap-3">
+          <button id="mobile-nurse-btn-back" class="px-3.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-150 dark:hover:bg-slate-800 text-[10px] font-bold text-slate-550 transition">
+            ← Back
+          </button>
+          <button id="mobile-nurse-btn-next" class="px-5 py-2 rounded-lg bg-gradient-to-r from-primary to-[#4CAFEB] hover:scale-103 transition text-white text-[10px] font-black shadow flex items-center gap-1">
+            Next →
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Unique Receptionist Greeting Pill Card -->
+    <button id="chatbot-toggle" class="glass-panel hover:bg-white dark:hover:bg-slate-800 p-2.5 rounded-full shadow-2xl flex items-center gap-3 border border-white/60 dark:border-slate-800/80 hover:scale-105 active:scale-95 transition-all duration-300 relative group animate-float" aria-label="Chat with Sunny">
+      
+      <!-- Avatar with Pulsing Status Dot -->
+      <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/50 shadow-md">
+        <img src="./assets/sunny_avatar-DDIf3n_A.jpg" alt="Sunny Receptionist" class="w-full h-full object-cover">
+        <span class="absolute bottom-0.5 right-0.5 w-3 h-3 bg-emerald-500 rounded-full border border-white dark:border-slate-900 shadow animate-pulse"></span>
+      </div>
+      
+      <!-- Greeting and Details -->
+      <div class="text-left pr-4">
+        <div class="flex items-center gap-1.5">
+          <span class="font-poppins font-bold text-xs text-slate-800 dark:text-white">Sunny</span>
+          <span class="text-[9px] bg-sky-100 dark:bg-sky-955/60 text-primary dark:text-accent font-extrabold px-1.5 py-0.5 rounded-full uppercase tracking-wider">AI Receptionist</span>
+        </div>
+        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 font-medium flex items-center gap-1">
+          <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span> Online 24/7 • Click to Chat
+        </p>
+      </div>
+
+      <!-- Badge Notification -->
+      <span class="chat-badge absolute -top-1.5 -left-1.5 bg-rose-500 text-white text-[9px] font-bold px-2 py-0.5 rounded-full shadow border border-white">1</span>
+    </button>
+
+  </div>
+
+  <script>
+    function updateBadgeCount() {
+      const appts = JSON.parse(localStorage.getItem('clinic_appointments') || '[]');
+      const badge = document.getElementById('nav-badge-count');
+      if (badge) {
+        badge.textContent = appts.length;
+        if (appts.length === 0) badge.classList.add('hidden');
+        else badge.classList.remove('hidden');
+      }
+    }
+    updateBadgeCount();
+    window.addEventListener('click', () => setTimeout(updateBadgeCount, 150));
+    window.addEventListener('submit', () => setTimeout(updateBadgeCount, 150));
+  </script>
+</body>
+</html>
