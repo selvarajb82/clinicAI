@@ -1015,7 +1015,7 @@ async function processNLP(text) {
         targetAgentId = 'insurance';
       } else if (msg.includes('billing') || msg.includes('invoice') || msg.includes('receipt') || msg.includes('price') || msg.includes('fee') || msg.includes('cost') || msg.includes('consultation fee') || msg.includes('payment') || msg.includes('pay')) {
         targetAgentId = 'billing';
-      } else if (msg.includes('lab') || msg.includes('blood') || msg.includes('urine') || msg.includes('fasting') || msg.includes('test results') || msg.includes('bloodwork') || msg.includes('diagnostic')) {
+      } else if (msg.includes('lab') || msg.includes('blood') || msg.includes('urine') || msg.includes('fasting') || msg.includes('lipid') || msg.includes('test results') || msg.includes('bloodwork') || msg.includes('diagnostic')) {
         targetAgentId = 'lab';
       } else if (msg.includes('pharmacy') || msg.includes('medication') || msg.includes('medicine') || msg.includes('prescription') || msg.includes('refill') || msg.includes('pill') || msg.includes('dosage') || msg.includes('insulin') || msg.includes('usage') || msg.includes('directions')) {
         targetAgentId = 'pharmacy';
