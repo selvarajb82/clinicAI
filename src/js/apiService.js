@@ -11,6 +11,7 @@ const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/AKfycbzrqbvCyQRaxo
 
 // Global Connection state
 let isOnline = true;
+let isSyncing = false;
 
 /**
  * Generate a unique Appointment ID matching SWC-[YYYYMMDD]-[RANDOM-4-DIGIT]
@@ -258,48 +259,54 @@ export function getDashboardMetrics() {
  * Background worker trying to flush offline queue items to the Google Sheets Apps Script Web App
  */
 export async function syncOfflineQueue() {
+  if (isSyncing) return; // a run is already in flight (interval + online event + enqueue can all call this)
   const queue = getSyncQueue();
   if (queue.length === 0) return;
 
-  // If no script URL is specified, run mock sheets sync in console
-  if (!GOOGLE_SHEETS_URL) {
-    console.log(`[Google Sheets Mock] Successfully synced ${queue.length} pending actions to Google Sheet database.`);
-    saveSyncQueue([]);
-    isOnline = true;
-    updateNetworkStatusUI(true);
-    return;
-  }
-
-  isOnline = true;
-  const failedToSync = [];
-
-  for (const item of queue) {
-    try {
-      // text/plain keeps this a simple request (no CORS preflight). The response is
-      // no longer opaque, so a rejected/errored sync surfaces here instead of being
-      // silently dropped from the queue.
-      const res = await fetch(GOOGLE_SHEETS_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8"
-        },
-        body: JSON.stringify({
-          action: item.action,
-          data: item.data
-        })
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const out = await res.json();
-      if (out.status !== "success") throw new Error(out.message || "apps script rejected payload");
-    } catch (e) {
-      console.warn(`[Google Sheets Connection Error] Sync action ${item.id} failed. Postponed.`, e);
-      isOnline = false;
-      failedToSync.push(item);
+  isSyncing = true;
+  try {
+    // If no script URL is specified, run mock sheets sync in console
+    if (!GOOGLE_SHEETS_URL) {
+      console.log(`[Google Sheets Mock] Successfully synced ${queue.length} pending actions to Google Sheet database.`);
+      saveSyncQueue([]);
+      isOnline = true;
+      updateNetworkStatusUI(true);
+      return;
     }
-  }
 
-  saveSyncQueue(failedToSync);
-  updateNetworkStatusUI(isOnline);
+    isOnline = true;
+    const failedToSync = [];
+
+    for (const item of queue) {
+      try {
+        // text/plain keeps this a simple request (no CORS preflight). The response is
+        // no longer opaque, so a rejected/errored sync surfaces here instead of being
+        // silently dropped from the queue.
+        const res = await fetch(GOOGLE_SHEETS_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+          },
+          body: JSON.stringify({
+            action: item.action,
+            data: item.data
+          })
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const out = await res.json();
+        if (out.status !== "success") throw new Error(out.message || "apps script rejected payload");
+      } catch (e) {
+        console.warn(`[Google Sheets Connection Error] Sync action ${item.id} failed. Postponed.`, e);
+        isOnline = false;
+        failedToSync.push(item);
+      }
+    }
+
+    saveSyncQueue(failedToSync);
+    updateNetworkStatusUI(isOnline);
+  } finally {
+    isSyncing = false;
+  }
 }
 
 /**
