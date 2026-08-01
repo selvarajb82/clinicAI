@@ -323,3 +323,16 @@ function updateNetworkStatusUI(online) {
 
 // Automatically poll for connection retries every 30 seconds
 setInterval(syncOfflineQueue, 30000);
+
+// React immediately to real connectivity changes instead of waiting for the
+// next 30s poll.
+window.addEventListener('online', () => {
+  isOnline = true;
+  updateNetworkStatusUI(true);
+  syncOfflineQueue();
+});
+window.addEventListener('offline', () => {
+  isOnline = false;
+  updateNetworkStatusUI(false);
+});
+updateNetworkStatusUI(navigator.onLine);
