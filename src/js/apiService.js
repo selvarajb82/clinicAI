@@ -342,10 +342,11 @@ function updateNetworkStatusUI(online) {
 setInterval(syncOfflineQueue, 30000);
 
 // React immediately to real connectivity changes instead of waiting for the
-// next 30s poll.
+// next 30s poll. Don't clear the banner here — that would be optimistic
+// (the browser is back online, but nothing has actually synced yet).
+// syncOfflineQueue() itself calls updateNetworkStatusUI() with the real
+// outcome once the sync attempt actually completes.
 window.addEventListener('online', () => {
-  isOnline = true;
-  updateNetworkStatusUI(true);
   syncOfflineQueue();
 });
 window.addEventListener('offline', () => {
