@@ -159,7 +159,7 @@ export function saveBillingInvoice(data) {
     timestamp: new Date().toISOString(),
     patientName: data.patientName || "Guest Patient",
     serviceType: data.serviceType || "Consultation",
-    feeAmount: data.feeAmount || "$150.00",
+    feeAmount: data.feeAmount || "$95.00",
     paymentMethod: data.paymentMethod || "Pending Card Selection",
     status: data.status || "Pending"
   };

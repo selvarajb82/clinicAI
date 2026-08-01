@@ -1277,13 +1277,13 @@ ${soapDraft}
       if (msg.includes('lab') || msg.includes('blood') || msg.includes('test')) {
         feeQuote = "Standard blood work panels cost between **$50.00 and $120.00**, depending on whether fasting panels or thyroid assessments are ordered.";
       } else {
-        feeQuote = "Our standard **general medicine consultation is $150.00** (for self-pay patients). Specialist visits are priced at **$220.00**.";
+        feeQuote = "Our standard **general medicine consultation begins at $95.00** (for self-pay patients). Specialist visits are priced at **$220.00**.";
       }
 
       saveBillingInvoice({
         patientName: sessionMemory.name || "Guest Patient",
         serviceType: msg.includes('lab') ? 'Lab Work' : 'General Consultation',
-        feeAmount: msg.includes('lab') ? '$85.00' : '$150.00',
+        feeAmount: msg.includes('lab') ? '$85.00' : '$95.00',
         paymentMethod: "Credit Card / FSA",
         status: "Pending"
       });
@@ -1291,8 +1291,8 @@ ${soapDraft}
       logActivityEvent("Billing invoice created.");
 
       return `Here are the standard pricing details:
-      
-* **General Consultation:** $150.00 (Self-Pay)
+
+* **General Consultation:** $95.00 (Self-Pay)
 * **Specialist Consultation:** $220.00
 * ${feeQuote}
 
